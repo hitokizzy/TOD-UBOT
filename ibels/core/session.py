@@ -1,9 +1,9 @@
 import sys
 
-from pytgcalls import PyTgCalls
+
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
-
+from pytgcalls import PyTgCalls
 from ..Config import Config
 from .client import ibelubotClient
 
@@ -14,7 +14,7 @@ loop = None
 if Config.STRING_SESSION:
     session = StringSession(str(Config.STRING_SESSION))
 else:
-    session = "ibel-ubot"
+    session = "ibelubot"
 
 try:
     ibel = ibelubotClient(

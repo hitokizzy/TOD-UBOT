@@ -1,6 +1,6 @@
-# from pytgcalls import StreamType
-# from pytgcalls.exceptions import NoActiveGroupCall, NotInGroupCallError
-# from pytgcalls.types.input_stream import AudioPiped
+from pytgcalls import StreamType
+from pytgcalls.exceptions import NoActiveGroupCall, NotInGroupCallError
+from pytgcalls.types.input_stream import AudioPiped
 from telethon.tl import types
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
