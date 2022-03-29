@@ -50,6 +50,7 @@ python-barcode
 python-dotenv
 pytz
 py-tgcalls
+pytgcalls
 qrcode
 randomstuff.py
 regex
