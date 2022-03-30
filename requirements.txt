@@ -49,7 +49,6 @@ pySmartDL
 python-barcode
 python-dotenv
 pytz
-py-tgcalls==0.9.0b1
 qrcode
 randomstuff.py
 regex
@@ -72,6 +71,5 @@ vcsi
 wand
 wget
 git+https://github.com/goldsmith/Wikipedia
-git+https://github.com/pytgcalls/pytgcalls
 youtube-search-python
 youtube_dl
