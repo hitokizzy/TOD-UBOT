@@ -1,6 +1,6 @@
-from pytgcalls import StreamType
-from pytgcalls.exceptions import NoActiveGroupCall, NotInGroupCallError
-from pytgcalls.types.input_stream import AudioPiped
+#from pytgcalls import StreamType
+#from pytgcalls.exceptions import NoActiveGroupCall, NotInGroupCallError
+#from pytgcalls.types.input_stream import AudioPiped
 from telethon.tl import types
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
@@ -12,7 +12,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_display_name
 
 from ibels import ibel
-from ibels.core.session import call_py
+#from ibels.core.session import call_py
 from ..core.managers import edit_delete, edit_or_reply
 
 plugin_category = "tools"
@@ -145,63 +145,63 @@ async def change_title(e):
         await edit_delete(e, f"**ERROR:** `{ex}`")
 
 
-@ibel.sad_cmd(
-    pattern="joinvc(?:\s|$)([\s\S]*)",
-    command=("joinvc", plugin_category),
-    info={
-        "header": "join voice chat group.",
-        "description": "join voice chat group.",
-        "usage": "{tr}joinvc",
-        "note": "port from Geez-Project",
-    },
-)
-async def join_(event):
-    geezav = await edit_or_reply(event, f"**Processing**")
-    if len(event.text.split()) > 1:
-        chat = event.text.split()[1]
-        try:
-            chat = await event.client(GetFullUserRequest(chat))
-        except Exception as e:
-            await edit_delete(event, f"**ERROR:** `{e}`", 30)
-    else:
-        chat = event.chat_id
-        from_user = vcmention(event.sender)
-    if not call_py.is_connected:
-        await call_py.start()
-    await call_py.join_group_call(
-        chat,
-        AudioPiped("http://duramecho.com/Misc/SilentCd/Silence01s.mp3"),
-        stream_type=StreamType().pulse_stream,
-    )
-    try:
-        await geezav.edit(f"**{from_user} Joined vc group chat!**")
-    except Exception as ex:
-        await edit_delete(event, f"**ERROR:** `{ex}`")
+#@ibel.sad_cmd(
+#    pattern="joinvc(?:\s|$)([\s\S]*)",
+#    command=("joinvc", plugin_category),
+#    info={
+#        "header": "join voice chat group.",
+#        "description": "join voice chat group.",
+#        "usage": "{tr}joinvc",
+#        "note": "port from Geez-Project",
+#    },
+#)
+#async def join_(event):
+#    geezav = await edit_or_reply(event, f"**Processing**")
+#    if len(event.text.split()) > 1:
+#        chat = event.text.split()[1]
+#        try:
+#            chat = await event.client(GetFullUserRequest(chat))
+#        except Exception as e:
+#            await edit_delete(event, f"**ERROR:** `{e}`", 30)
+#    else:
+#        chat = event.chat_id
+#        from_user = vcmention(event.sender)
+#    if not call_py.is_connected:
+#        await call_py.start()
+#    await call_py.join_group_call(
+#        chat,
+#        AudioPiped("http://duramecho.com/Misc/SilentCd/Silence01s.mp3"),
+#        stream_type=StreamType().pulse_stream,
+#    )
+#    try:
+#        await geezav.edit(f"**{from_user} Joined vc group chat!**")
+#    except Exception as ex:
+#        await edit_delete(event, f"**ERROR:** `{ex}`")
 
 
-@ibel.sad_cmd(
-    pattern="joinvc(?:\s|$)([\s\S]*)",
-    command=("joinvc", plugin_category),
-    info={
-        "header": "leave voice chat group.",
-        "description": "leave voice chat group.",
-        "usage": "{tr}leavevc",
-        "note": "port from Geez-Project",
-    },
-)
-async def leavevc(event):
-    """leave video chat"""
-    geezav = await edit_or_reply(event, "Processing")
-    chat_id = event.chat_id
-    from_user = vcmention(event.sender)
-    if from_user:
-        try:
-            await call_py.leave_group_call(chat_id)
-        except (NotInGroupCallError, NoActiveGroupCall):
-            pass
-        await geezav.edit(f"**{from_user} Leaved from VC.**")
-    else:
-        await edit_delete(event, f"**Sorry {from_user} not in vc group chat**")
+#@ibel.sad_cmd(
+#    pattern="joinvc(?:\s|$)([\s\S]*)",
+#    command=("joinvc", plugin_category),
+#    info={
+#        "header": "leave voice chat group.",
+#        "description": "leave voice chat group.",
+#        "usage": "{tr}leavevc",
+#        "note": "port from Geez-Project",
+#    },
+#)
+#async def leavevc(event):
+#    """leave video chat"""
+#    geezav = await edit_or_reply(event, "Processing")
+#    chat_id = event.chat_id
+#    from_user = vcmention(event.sender)
+#    if from_user:
+#        try:
+#            await call_py.leave_group_call(chat_id)
+#        except (NotInGroupCallError, NoActiveGroupCall):
+#            pass
+#        await geezav.edit(f"**{from_user} Leaved from VC.**")
+#    else:
+#       await edit_delete(event, f"**Sorry {from_user} not in vc group chat**")
 
 
 # Iraa
