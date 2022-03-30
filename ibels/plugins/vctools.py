@@ -8,7 +8,6 @@ from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
 from telethon.tl.functions.phone import EditGroupCallTitleRequest as settitle
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
-from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_display_name
 
 from ibels import ibel
