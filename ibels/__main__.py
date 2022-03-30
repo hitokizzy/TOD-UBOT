@@ -41,24 +41,6 @@ class sadcheck:
 
 sadcheck = sadcheck()
 
-APP_ID = Config.APP_ID or int(os.environ.get("APP_ID"))
-API_HASH = Config.API_HASH or str(os.environ.get("API_HASH"))
-SESSION_NAME = Config.SESSION_NAME or os.environ.get("SESSION_NAME")
-
-PLUGINS = dict(
-      root="ibels",
-    include=[
-        "vc.",
-    ]
-)
-
-app = Client(SESSION_NAME, APP_ID, API_HASH, plugins=PLUGINS)
-# logging.basicConfig(level=logging.INFO)
-app.start()
-print('>>> MUSIC MODULE STARTED')
-idle()
-app.stop()
-print('\n>>> MUSIC MODULE STOPPED')
 
 async def startup_process():
     check = await ipchange()
@@ -97,3 +79,22 @@ else:
         ibel.run_until_disconnected()
     except ConnectionError:
         pass
+
+APP_ID = Config.APP_ID or int(os.environ.get("APP_ID"))
+API_HASH = Config.API_HASH or str(os.environ.get("API_HASH"))
+SESSION_NAME = Config.SESSION_NAME or os.environ.get("SESSION_NAME")
+
+PLUGINS = dict(
+      root="ibels",
+    include=[
+        "vc.player",
+    ]
+)
+
+app = Client(SESSION_NAME, APP_ID, API_HASH, plugins=PLUGINS)
+# logging.basicConfig(level=logging.INFO)
+app.start()
+print('>>> MUSIC MODULE STARTED')
+idle()
+app.stop()
+print('\n>>> MUSIC MODULE STOPPED')
