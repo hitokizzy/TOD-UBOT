@@ -58,16 +58,16 @@ def main_menu():
     buttons = [
         (Button.inline("Info", data="check"),),
         (
-            Button.inline(f"Admin ({len(GRP_INFO['❦admin❦'])})", data="admin_menu"),
-            Button.inline(f"Bot ({len(GRP_INFO['❦bot❦'])})", data="bot_menu"),
+            Button.inline(f"Admin ({len(GRP_INFO['admin'])})", data="admin_menu"),
+            Button.inline(f"Bot ({len(GRP_INFO['bot'])})", data="bot_menu"),
         ),
         (
-            Button.inline(f"Fun ({len(GRP_INFO['❦ fun ❦'])})", data="fun_menu"),
-            Button.inline(f"Misc ({len(GRP_INFO['❦ misc ❦'])})", data="misc_menu"),
+            Button.inline(f"Fun ({len(GRP_INFO['fun'])})", data="fun_menu"),
+            Button.inline(f"Misc ({len(GRP_INFO['misc'])})", data="misc_menu"),
         ),
         (
-            Button.inline(f"Tools ({len(GRP_INFO['❦ tools ❦'])})", data="tools_menu"),
-            Button.inline(f"Utils ({len(GRP_INFO['❦ utils ❦'])})", data="utils_menu"),
+            Button.inline(f"Tools ({len(GRP_INFO['tools'])})", data="tools_menu"),
+            Button.inline(f"Utils ({len(GRP_INFO['utils'])})", data="utils_menu"),
         ),
         (
             Button.inline(f"Extra ({len(GRP_INFO['extra'])})", data="extra_menu"),
@@ -102,7 +102,7 @@ def paginate_help(
         number_of_cols = int(gvarstatus("NO_OF_COLUMNS_IN_HELP") or 2)
     except (ValueError, TypeError):
         number_of_cols = 2
-    HELP_EMOJI = gvarstatus("HELP_EMOJI") or " "
+    HELP_EMOJI = gvarstatus("HELP_EMOJI") or "❦"
     helpable_plugins = [p for p in loaded_plugins if not p.startswith("_")]
     helpable_plugins = sorted(helpable_plugins)
     if len(HELP_EMOJI) == 2:
@@ -256,13 +256,13 @@ async def inline_handler(event):  # sourcery no-metrics
             elif I_IMG:
                 result = builder.document(
                     I_IMG,
-                    title="Alive Sad",
+                    title="Alive ibels",
                     text=query,
                     buttons=buttons,
                 )
             else:
                 result = builder.article(
-                    title="Alive Sad",
+                    title="Alive ibels",
                     text=query,
                     buttons=buttons,
                 )
@@ -426,8 +426,8 @@ async def inline_handler(event):  # sourcery no-metrics
         elif string == "help":
             _result = main_menu()
             result = builder.article(
-                title="© ibel-ubot Help",
-                description="Help menu for ibel-ubot",
+                title="© ibel ubot Help",
+                description="Help menu for ibel ubot",
                 text=_result[0],
                 buttons=_result[1],
                 link_preview=False,

@@ -63,8 +63,8 @@ async def startupmessage():
         if BOTLOG:
             Config.sadLOGO = await ibel.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph/file/7d9303cc49455a07eb08e.png",
-                caption="**Your ibel-ubot has been started successfully.**",
+                "https://telegra.ph/file/486715ddbbb29da89b2ed.png",
+                caption="**Your ibel,s ubot is activated.**",
                 buttons=[(Button.url("Support", "https://xnxx.com"),)],
             )
     except Exception as e:
@@ -81,7 +81,7 @@ async def startupmessage():
         if msg_details:
             await ibel.check_testcases()
             message = await ibel.get_messages(msg_details[0], ids=msg_details[1])
-            text = message.text + "\n\n**SadUsebot back Alive.**"
+            text = message.text + "\n\n**Ibel's Ubot back Alive.**"
             await ibel.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
                 await ibel.send_message(
