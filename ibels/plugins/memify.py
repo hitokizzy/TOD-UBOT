@@ -180,7 +180,7 @@ async def memes(event):
     meme_file = convert_toimage(output[1])
     meme = os.path.join("./temp", "sadmeme.jpg")
     if gvarstatus("CNG_FONTS") is None:
-        CNG_FONTS = "userbot/helpers/styles/impact.ttf"
+        CNG_FONTS = "ibels/helpers/styles/impact.ttf"
     else:
         CNG_FONTS = gvarstatus("CNG_FONTS")
     if max(len(top), len(bottom)) < 21:
@@ -218,7 +218,7 @@ async def lang(event):
         await asyncio.sleep(1)
         await sadevent.edit(f"**Available Fonts names are here:-**\n\n{FONTS}")
     else:
-        arg = f"userbot/helpers/styles/{input_str}"
+        arg = f"ibels/helpers/styles/{input_str}"
         addgvar("CNG_FONTS", arg)
         await edit_or_reply(event, f"**Fonts for Memify changed to :-** `{input_str}`")
 

@@ -10,8 +10,8 @@ from ibels import ibel
 @ibel.tgbot.on(CallbackQuery(data=re.compile(b"secret_(.*)")))
 async def on_plug_in_callback_query_handler(event):
     timestamp = int(event.pattern_match.group(1).decode("UTF-8"))
-    if os.path.exists("./userbot/secrets.txt"):
-        jsondata = json.load(open("./userbot/secrets.txt"))
+    if os.path.exists("./ibels/secrets.txt"):
+        jsondata = json.load(open("./ibels/secrets.txt"))
         try:
             message = jsondata[f"{timestamp}"]
             userid = message["userid"]

@@ -145,7 +145,7 @@ async def load_plugins(folder):
     """
     To load plugins from the mentioned folder
     """
-    path = f"userbot/{folder}/*.py"
+    path = f"ibels/{folder}/*.py"
     files = glob.glob(path)
     files.sort()
     for name in files:
@@ -160,7 +160,7 @@ async def load_plugins(folder):
                         try:
                             load_module(
                                 shortname.replace(".py", ""),
-                                plugin_path=f"userbot/{folder}",
+                                plugin_path=f"ibels/{folder}",
                             )
                             break
                         except ModuleNotFoundError as e:
@@ -169,9 +169,9 @@ async def load_plugins(folder):
                             if check > 5:
                                 break
                 else:
-                    os.remove(Path(f"userbot/{folder}/{shortname}.py"))
+                    os.remove(Path(f"ibels/{folder}/{shortname}.py"))
             except Exception as e:
-                os.remove(Path(f"userbot/{folder}/{shortname}.py"))
+                os.remove(Path(f"ibels/{folder}/{shortname}.py"))
                 LOGS.info(f"unable to load {shortname} because of error {e}")
 
 

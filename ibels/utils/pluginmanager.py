@@ -20,7 +20,7 @@ def load_module(shortname, plugin_path=None):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        path = Path(f"userbot/plugins/{shortname}.py")
+        path = Path(f"ibels/plugins/{shortname}.py")
         checkplugins(path)
         name = "userbot.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
@@ -29,7 +29,7 @@ def load_module(shortname, plugin_path=None):
         LOGS.info("Successfully imported " + shortname)
     else:
         if plugin_path is None:
-            path = Path(f"userbot/plugins/{shortname}.py")
+            path = Path(f"ibels/plugins/{shortname}.py")
             name = f"userbot.plugins.{shortname}"
         else:
             path = Path((f"{plugin_path}/{shortname}.py"))

@@ -1,6 +1,6 @@
 import sys
 
-#from pytgcalls import PyTgCalls
+from pytgcalls import PyTgCalls
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from ..Config import Config

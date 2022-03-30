@@ -33,7 +33,7 @@ async def _(event):
 )
 async def _(event):
     "To list all plugins in userbot"
-    cmd = "ls userbot/plugins"
+    cmd = "ls ibels/plugins"
     o = (await _sadutils.runcmd(cmd))[0]
     OUTPUT = f"**[ibel's](tg://need_update_for_some_feature/) PLUGINS:**\n{o}"
     await edit_or_reply(event, OUTPUT)

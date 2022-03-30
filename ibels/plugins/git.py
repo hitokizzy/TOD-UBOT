@@ -111,7 +111,7 @@ async def _(event):
     command=("commit", plugin_category),
     info={
         "header": "To commit the replied plugin to github.",
-        "description": "It uploads the given file to your github repo in **userbot/plugins** folder\
+        "description": "It uploads the given file to your github repo in **ibels/plugins** folder\
         \nTo work commit plugin set `GITHUB_ACCESS_TOKEN` and `GIT_REPO_NAME` Variables in Heroku vars First",
         "note": "As of now not needed i will sure develop it ",
         "usage": "{tr}commit",
@@ -168,7 +168,7 @@ async def git_commit(file_name, mone):
         if i == 'ContentFile(path="' + file_name + '")':
             return await mone.edit("`File Already Exists`")
     if create_file:
-        file_name = "userbot/plugins/" + file_name
+        file_name = "ibels/plugins/" + file_name
         LOGS.info(file_name)
         try:
             repo.create_file(
@@ -178,7 +178,7 @@ async def git_commit(file_name, mone):
             ccess = Config.GIT_REPO_NAME
             ccess = ccess.strip()
             await mone.edit(
-                f"`Commited On Your Github Repo`\n\n[Your PLUGINS](https://github.com/{ccess}/tree/master/userbot/plugins/)"
+                f"`Commited On Your Github Repo`\n\n[Your PLUGINS](https://github.com/{ccess}/tree/master/ibels/plugins/)"
             )
         except BaseException:
             LOGS.info("Cannot Create Plugin")
