@@ -304,7 +304,7 @@ async def inline_handler(event):  # sourcery no-metrics
             query = query[7:]
             user, txct = query.split(" ", 1)
             builder = event.builder
-            troll = os.path.join("./userbot", "troll.txt")
+            troll = os.path.join("./ibels", "troll.txt")
             try:
                 jsondata = json.load(open(troll))
             except Exception:
@@ -354,7 +354,7 @@ async def inline_handler(event):  # sourcery no-metrics
             query = query[7:]
             user, txct = query.split(" ", 1)
             builder = event.builder
-            secret = os.path.join("./userbot", "secrets.txt")
+            secret = os.path.join("./ibels", "secrets.txt")
             try:
                 jsondata = json.load(open(secret))
             except Exception:
@@ -403,7 +403,7 @@ async def inline_handler(event):  # sourcery no-metrics
         elif match3:
             query = query[5:]
             builder = event.builder
-            hide = os.path.join("./userbot", "hide.txt")
+            hide = os.path.join("./ibels", "hide.txt")
             try:
                 jsondata = json.load(open(hide))
             except Exception:

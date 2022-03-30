@@ -15,7 +15,7 @@ from .utils import (
     verifyLoggerGroup,
 )
 
-LOGS = logging.getLogger("ibel-ubot")
+LOGS = logging.getLogger("ibelubot")
 
 print(ibels.__copyright__)
 print("Licensed under the terms of the " + ibels.__license__)

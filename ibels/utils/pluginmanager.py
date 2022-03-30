@@ -22,7 +22,7 @@ def load_module(shortname, plugin_path=None):
     elif shortname.endswith("_"):
         path = Path(f"ibels/plugins/{shortname}.py")
         checkplugins(path)
-        name = "userbot.plugins.{}".format(shortname)
+        name = "ibels.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -30,7 +30,7 @@ def load_module(shortname, plugin_path=None):
     else:
         if plugin_path is None:
             path = Path(f"ibels/plugins/{shortname}.py")
-            name = f"userbot.plugins.{shortname}"
+            name = f"ibels.plugins.{shortname}"
         else:
             path = Path((f"{plugin_path}/{shortname}.py"))
             name = f"{plugin_path}/{shortname}".replace("/", ".")
@@ -57,7 +57,7 @@ def load_module(shortname, plugin_path=None):
         mod.borg = ibel
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules["userbot.plugins." + shortname] = mod
+        sys.modules["ibels.plugins." + shortname] = mod
         LOGS.info("Successfully imported " + shortname)
 
 
@@ -83,7 +83,7 @@ def remove_plugin(shortname):
     except BaseException:
         pass
     try:
-        name = f"userbot.plugins.{shortname}"
+        name = f"ibels.plugins.{shortname}"
         for i in reversed(range(len(ibel._event_builders))):
             ev, cb = ibel._event_builders[i]
             if cb.__module__ == name:

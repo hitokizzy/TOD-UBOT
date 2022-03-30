@@ -46,7 +46,7 @@ async def amireallyalive(event):
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "❦"
     ALIVE_TEXT = (
-        gvarstatus("ALIVE_TEXT") or "**IBEL'S USERBOT IS ALIVE**"
+        gvarstatus("ALIVE_TEXT") or "**IBEL'S UBOT IS ALIVE**"
     )
     SAD_IMG = (
         gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/486715ddbbb29da89b2ed.png"
