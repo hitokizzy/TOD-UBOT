@@ -10,7 +10,7 @@ dataclasses
 DateTime
 emoji
 fonttools
-futures
+ffmpeg-python
 geopy
 gitpython
 glitch_this
@@ -73,5 +73,4 @@ wget
 git+https://github.com/goldsmith/Wikipedia
 youtube-search-python
 youtube_dl
-ffmpeg-python
-wheel
+
