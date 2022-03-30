@@ -162,7 +162,7 @@ async def bad(event):  # sourcery no-metrics
         "NOTE": "You can set,fetch or delete these by `{tr}setdv` , `{tr}getdv` & `{tr}deldv` as well.",
     },
 )
-async def custom_ibel-ubot(event):
+async def custom_ibelubot(event):
     "To customize your ibel-ubot."
     reply = await event.get_reply_message()
     text = None
@@ -210,7 +210,7 @@ async def custom_ibel-ubot(event):
         "NOTE": "You can set,fetch or delete these by `{tr}setdv` , `{tr}getdv` & `{tr}deldv` as well.",
     },
 )
-async def custom_ibel-ubot(event):
+async def custom_ibelubot(event):
     "To delete costomization of your ibel-ubot."
     input_str = event.pattern_match.group(1)
     if input_str == "pmpermit":

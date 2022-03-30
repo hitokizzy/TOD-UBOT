@@ -8,7 +8,7 @@ SESSION_NAME = environ["SESSION_NAME"]
 PLUGINS = dict(
     root="ibels",
     include=[
-        "vc." + environ["PLUGIN"],
+        "player",
     ]
 )
 
