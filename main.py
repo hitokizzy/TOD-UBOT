@@ -7,7 +7,7 @@ APP_HASH = Config.APP_HASH or str(os.environ.get("APP_HASH"))
 SESSION_NAME = Config.SESSION_NAME or os.environ.get("SESSION_NAME")
 
 PLUGINS = dict(
-    root="ibels",
+    root="ibels/plugins",
     include=[
         "player",
     ]
