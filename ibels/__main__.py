@@ -48,7 +48,7 @@ SESSION_NAME = Config.SESSION_NAME or os.environ.get("SESSION_NAME")
 PLUGINS = dict(
       root="ibels",
     include=[
-        "vc." + environ["PLUGIN"],
+        "vc.",
     ]
 )
 
