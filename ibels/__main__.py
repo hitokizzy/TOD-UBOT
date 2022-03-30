@@ -15,7 +15,6 @@ from .utils import (
     verifyLoggerGroup,
 )
 import os
-from os import environ
 from pyrogram import Client, idle
 
 LOGS = logging.getLogger("ibelubot")
