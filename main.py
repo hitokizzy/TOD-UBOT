@@ -1,3 +1,4 @@
+from os import environ
 from pyrogram import Client, idle
 
 APP_ID = int(environ["APP_ID"])
