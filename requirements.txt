@@ -49,7 +49,7 @@ pySmartDL
 python-barcode
 python-dotenv
 pytz
-py-tgcalls
+py-tgcalls==0.9.0b1
 qrcode
 randomstuff.py
 regex
