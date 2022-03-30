@@ -3,7 +3,6 @@ import sys
 
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
-from pytgcalls import PyTgCalls
 from ..Config import Config
 from .client import ibelubotClient
 
@@ -27,7 +26,6 @@ try:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py = PyTgCalls(ibel)
 except Exception as e:
     print(f"STRING_SESSION - {e}")
     sys.exit()
