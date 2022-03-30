@@ -42,7 +42,7 @@ class sadcheck:
 sadcheck = sadcheck()
 
 APP_ID = Config.APP_ID or int(os.environ.get("APP_ID"))
-APP_HASH = Config.APP_HASH or str(os.environ.get("APP_HASH"))
+API_HASH = Config.API_HASH or str(os.environ.get("API_HASH"))
 SESSION_NAME = Config.SESSION_NAME or os.environ.get("SESSION_NAME")
 
 PLUGINS = dict(
@@ -52,7 +52,7 @@ PLUGINS = dict(
     ]
 )
 
-app = Client(SESSION_NAME, APP_ID, APP_HASH, plugins=PLUGINS)
+app = Client(SESSION_NAME, APP_ID, API_HASH, plugins=PLUGINS)
 # logging.basicConfig(level=logging.INFO)
 app.start()
 print('>>> MUSIC MODULE STARTED')
