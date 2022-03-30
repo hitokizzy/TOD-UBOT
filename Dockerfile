@@ -1,4 +1,4 @@
-FROM hitokizzy/ygnyolongbego:slim-buster
+FROM hitokizzy/ibel:slim-buster
 
 #clonning repo 
 RUN git clone -b master https://github.com/hitokizzy/Ibel-Ubot /home/ibels/

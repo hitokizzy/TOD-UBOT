@@ -23,7 +23,11 @@
       "value": ""
     },
     "STRING_SESSION": {
-      "description": "Get this value by repl.it/@izzy-adeeva/UserButt",
+      "description": "Get this value by repl.it/@izzy-adeeva/UserButt (telethon)",
+      "value": ""
+    },
+    "SESSION_NAME": {
+      "description": "Get this value by repl.it/@izzy-adeeva/UserButt (pyrogram)",
       "value": ""
     },
     "TG_BOT_TOKEN": {
