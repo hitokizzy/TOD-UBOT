@@ -5,6 +5,7 @@
 import os
 from typing import Set
 
+
 from telethon.tl.types import ChatBannedRights
 
 
@@ -21,6 +22,7 @@ class Config(object):
     DB_URI = os.environ.get("DATABASE_URL", None)
     # Get this value by running python3 stringsetup.py or https://repl.it/@sandeep1709/generatestringsession
     STRING_SESSION = os.environ.get("STRING_SESSION", None)
+    SESSION_NAME = os.environ.get("SESSION_NAME", None)
     # Telegram BOT Token and bot username from @BotFather
     TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN") or os.environ.get(
         "TG_BOT_TOKEN_BF_HER", None

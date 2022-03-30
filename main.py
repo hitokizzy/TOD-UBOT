@@ -1,9 +1,10 @@
-from os import environ
+import os
 from pyrogram import Client, idle
+from ..Config import Config
 
-APP_ID = int(environ["APP_ID"])
-APP_HASH = environ["APP_HASH"]
-SESSION_NAME = environ["SESSION_NAME"]
+APP_ID = Config.APP_ID or int(os.environ.get("APP_ID"))
+APP_HASH = Config.APP_HASH or str(os.environ.get("APP_HASH"))
+SESSION_NAME = Config.SESSION_NAME or os.environ.get("SESSION_NAME")
 
 PLUGINS = dict(
     root="ibels",
