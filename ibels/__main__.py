@@ -15,8 +15,8 @@ from .utils import (
     verifyLoggerGroup,
 )
 import os
+from os import environ
 from pyrogram import Client, idle
-from ..Config import Config
 
 LOGS = logging.getLogger("ibelubot")
 
@@ -46,9 +46,9 @@ APP_HASH = Config.APP_HASH or str(os.environ.get("APP_HASH"))
 SESSION_NAME = Config.SESSION_NAME or os.environ.get("SESSION_NAME")
 
 PLUGINS = dict(
-    root="ibels/plugins",
+      root="ibels",
     include=[
-        "player",
+        "vc." + environ["PLUGIN"],
     ]
 )
 
