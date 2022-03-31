@@ -4,6 +4,7 @@ from telethon.sessions import StringSession
 from ..Config import Config
 from .client import ibelubotClient
 from pytgcalls import PyTgCalls
+from telethon.sync import TelegramClient
 
 __version__ = "2.0.0"
 
@@ -25,7 +26,25 @@ try:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py = PyTgCalls(ibel)
+except Exception as e:
+    print(f"STRING_SESSION - {e}")
+    sys.exit()
+
+
+if Config.STRING_SESSION:
+    session = StringSession(str(Config.STRING_SESSION))
+else:
+    session = "GeezProjects"
+try:
+    bot = TelegramClient(
+        session=session,
+        api_id=Config.APP_ID,
+        api_hash=Config.API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py = PyTgCalls(bot)
 except Exception as e:
     print(f"STRING_SESSION - {e}")
     sys.exit()
