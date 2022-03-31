@@ -1,5 +1,4 @@
 import sys
-from pytgcalls import idle
 import ibels
 from ibels import BOTLOG_CHATID, HEROKU_APP, PM_LOGGER_GROUP_ID
 
