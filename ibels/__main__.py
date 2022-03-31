@@ -29,6 +29,7 @@ except Exception as e:
     LOGS.error(f"{e}")
     sys.exit()
 
+call_py.start()
 
 class sadcheck:
     def __init__(self):
@@ -63,8 +64,7 @@ async def startup_process():
 
 
 ibel.loop.run_until_complete(startup_process())
-
-
+idle()
 if len(sys.argv) not in (1, 3, 4):
     ibel.disconnect()
 elif not sadcheck.sucess:
@@ -73,8 +73,6 @@ elif not sadcheck.sucess:
 else:
     try:
         ibel.run_until_disconnected()
-        call_py.start()
-        idle()
     except ConnectionError:
         pass
 
