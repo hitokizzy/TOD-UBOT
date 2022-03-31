@@ -64,7 +64,8 @@ async def startup_process():
 
 
 ibel.loop.run_until_complete(startup_process())
-
+call_py.start()
+idle()
 
 if len(sys.argv) not in (1, 3, 4):
     ibel.disconnect()
@@ -77,8 +78,3 @@ else:
     except ConnectionError:
         pass
 
-try:
-    call_py.start()
-except Exception as e:
-    LOGS.error(f"{e}")
-    sys.exit()
