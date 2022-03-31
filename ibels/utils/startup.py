@@ -64,7 +64,7 @@ async def startupmessage():
             Config.sadLOGO = await ibel.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/486715ddbbb29da89b2ed.png",
-                caption="**Your ibel,s ubot is activated.**",
+                caption="**Your ibel's ubot is activated.**",
                 buttons=[(Button.url("Support", "https://xnxx.com"),)],
             )
     except Exception as e:
