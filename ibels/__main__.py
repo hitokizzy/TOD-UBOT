@@ -1,11 +1,11 @@
 import sys
-
+from pytgcalls import idle
 import ibels
 from ibels import BOTLOG_CHATID, HEROKU_APP, PM_LOGGER_GROUP_ID
 
 from .Config import Config
 from .core.logger import logging
-from .core.session import ibel
+from .core.session import ibel, call_py
 from .utils import (
     add_bot_to_logger_group,
     ipchange,
@@ -77,3 +77,8 @@ else:
     except ConnectionError:
         pass
 
+try:
+    call_py.start()
+except Exception as e:
+    LOGS.error(f"{e}")
+    sys.exit()
