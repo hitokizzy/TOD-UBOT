@@ -59,7 +59,7 @@ async def startup_process():
         await add_bot_to_logger_group(PM_LOGGER_GROUP_ID)
     await startupmessage()
     sadcheck.sucess = True
-    call_py.start()
+    await call_py.start()
     
 ibel.loop.run_until_complete(startup_process())
 idle()
