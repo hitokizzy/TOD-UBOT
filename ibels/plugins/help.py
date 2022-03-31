@@ -11,14 +11,14 @@ cmdprefix = Config.COMMAND_HAND_LER
 
 plugin_category = "tools"
 
-hemojis = {
-    "admin": "",
-    "bot": "",
-    "fun": "",
-    "misc": "",
-    "tools": "",
-    "utils": "",
-    "extra": "",
+emoji = {
+    "admin": "❦",
+    "bot": "❦",
+    "fun": "❦",
+    "misc": "❦",
+    "tools": "❦",
+    "utils": "❦",
+    "extra": "❦",
 }
 
 
@@ -102,7 +102,7 @@ async def grpinfo():
     category = ["admin", "bot", "fun", "misc", "tools", "utils", "extra"]
     for ibel in category:
         plugins = GRP_INFO[ibel]
-        outstr += f"**{hemojis[ibel]} {ibel.title()} **({len(plugins)})\n"
+        outstr += f"**{emoji[ibel]} {ibel.title()} **({len(plugins)})\n"
         for plugin in plugins:
             outstr += f"`{plugin}`  "
         outstr += "\n\n"
@@ -114,7 +114,7 @@ async def cmdlist():
     category = ["admin", "bot", "fun", "misc", "tools", "utils", "extra"]
     for ibel in category:
         plugins = GRP_INFO[ibel]
-        outstr += f"**{hemojis[ibel]} {ibel.title()} ** - {len(plugins)}\n\n"
+        outstr += f"**{emoji[ibel]} {ibel.title()} ** - {len(plugins)}\n\n"
         for plugin in plugins:
             cmds = PLG_INFO[plugin]
             outstr += f"• **{plugin.title()} has {len(cmds)} commands**\n"

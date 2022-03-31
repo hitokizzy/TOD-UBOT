@@ -63,12 +63,12 @@ async def join_(event):
             await geezav.edit(f"**INFO:** `{e}`")
 
 @ibel.sad_cmd(
-    pattern="joinvc(?:\s|$)([\s\S]*)",
-    command=("joinvc", plugin_category),
+    pattern="leavevc(?:\s|$)([\s\S]*)",
+    command=("leavevc", plugin_category),
     info={
-        "header": "for joining voice chat group.",
-        "description": "for joining voice chat group.",
-        "usage": "{tr}joinvc",
+        "header": "for leaving voice chat group.",
+        "description": "for leaving voice chat group.",
+        "usage": "{tr}leavevc",
         "note": "Ported from Geez Project",
     },
 )

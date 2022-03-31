@@ -56,7 +56,7 @@ def main_menu():
     text = f"Ibel's Ubot Helper\
         \n𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗱 𝗯𝘆 {mention}"
     buttons = [
-        (Button.inline("ℹ️ Info", data="check"),),
+        (Button.inline(" Info", data="check"),),
         (
             Button.inline(f"❦ Admin ❦ ({len(GRP_INFO['admin'])})", data="admin_menu"),
             Button.inline(f"❦ Bot ❦ ({len(GRP_INFO['bot'])})", data="bot_menu"),
@@ -163,9 +163,9 @@ def paginate_help(
                 modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
             ] + [
                 (
-                    Button.inline("⌫", data=f"{prefix}_prev({modulo_page})_plugin"),
+                    Button.inline("◁", data=f"{prefix}_prev({modulo_page})_plugin"),
                     Button.inline("⚙️ Main Menu", data="mainmenu"),
-                    Button.inline("⌦", data=f"{prefix}_next({modulo_page})_plugin"),
+                    Button.inline("▷", data=f"{prefix}_next({modulo_page})_plugin"),
                 )
             ]
         else:
@@ -178,7 +178,7 @@ def paginate_help(
         ] + [
             (
                 Button.inline(
-                    "⌫",
+                    "◁",
                     data=f"{prefix}_prev({modulo_page})_command_{category_plugins}_{category_pgno}",
                 ),
                 Button.inline(
@@ -186,7 +186,7 @@ def paginate_help(
                     data=f"back_plugin_{category_plugins}_{category_pgno}",
                 ),
                 Button.inline(
-                    "⌦",
+                    "▷",
                     data=f"{prefix}_next({modulo_page})_command_{category_plugins}_{category_pgno}",
                 ),
             )
@@ -232,12 +232,12 @@ async def inline_handler(event):  # sourcery no-metrics
             ALIVE_PIC = gvarstatus("ALIVE_PIC") or ("https://telegra.ph/file/486715ddbbb29da89b2ed.png")
             IALIVE_PIC = gvarstatus("IALIVE_PIC") or ("https://telegra.ph/file/486715ddbbb29da89b2ed.png")
             if IALIVE_PIC:
-                CAT = [x for x in IALIVE_PIC.split()]
-                PIC = list(CAT)
+                BEL = [x for x in IALIVE_PIC.split()]
+                PIC = list(BEL)
                 I_IMG = random.choice(PIC)
             if not IALIVE_PIC and ALIVE_PIC:
-                CAT = [x for x in ALIVE_PIC.split()]
-                PIC = list(CAT)
+                BEL = [x for x in ALIVE_PIC.split()]
+                PIC = list(BEL)
                 I_IMG = random.choice(PIC)
             elif not IALIVE_PIC:
                 I_IMG = None
@@ -527,8 +527,8 @@ async def inline_handler(event):  # sourcery no-metrics
             ]
             PM_PIC = gvarstatus("pmpermit_pic") or ("https://telegra.ph/file/486715ddbbb29da89b2ed.png")
             if PM_PIC:
-                CAT = [x for x in PM_PIC.split()]
-                PIC = list(CAT)
+                BEL = [x for x in PM_PIC.split()]
+                PIC = list(BEL)
                 CAT_IMG = random.choice(PIC)
             else:
                 CAT_IMG = None
