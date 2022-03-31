@@ -29,7 +29,6 @@ except Exception as e:
     LOGS.error(f"{e}")
     sys.exit()
 
-call_py.start()
 
 class sadcheck:
     def __init__(self):
@@ -60,9 +59,8 @@ async def startup_process():
         await add_bot_to_logger_group(PM_LOGGER_GROUP_ID)
     await startupmessage()
     sadcheck.sucess = True
-    return
-
-
+    call_py.start()
+    
 ibel.loop.run_until_complete(startup_process())
 idle()
 if len(sys.argv) not in (1, 3, 4):
