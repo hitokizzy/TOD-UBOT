@@ -53,25 +53,25 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"ibelubot\
-        \nProvide by {mention}"
+    text = f"Ibel's Ubot Helper\
+        \n𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗱 𝗯𝘆 {mention}"
     buttons = [
-        (Button.inline("Info", data="check"),),
+        (Button.inline("ℹ️ Info", data="check"),),
         (
-            Button.inline(f"Admin ({len(GRP_INFO['admin'])})", data="admin_menu"),
-            Button.inline(f"Bot ({len(GRP_INFO['bot'])})", data="bot_menu"),
+            Button.inline(f"❦ Admin ❦ ({len(GRP_INFO['admin'])})", data="admin_menu"),
+            Button.inline(f"❦ Bot ❦ ({len(GRP_INFO['bot'])})", data="bot_menu"),
         ),
         (
-            Button.inline(f"Fun ({len(GRP_INFO['fun'])})", data="fun_menu"),
-            Button.inline(f"Misc ({len(GRP_INFO['misc'])})", data="misc_menu"),
+            Button.inline(f"❦ Fun ❦ ({len(GRP_INFO['fun'])})", data="fun_menu"),
+            Button.inline(f"❦ Misc ❦ ({len(GRP_INFO['misc'])})", data="misc_menu"),
         ),
         (
-            Button.inline(f"Tools ({len(GRP_INFO['tools'])})", data="tools_menu"),
-            Button.inline(f"Utils ({len(GRP_INFO['utils'])})", data="utils_menu"),
+            Button.inline(f"❦ Tools ❦ ({len(GRP_INFO['tools'])})", data="tools_menu"),
+            Button.inline(f"❦ Utils ❦ ({len(GRP_INFO['utils'])})", data="utils_menu"),
         ),
         (
-            Button.inline(f"Extra ({len(GRP_INFO['extra'])})", data="extra_menu"),
-            Button.inline("Close Menu", data="close"),
+            Button.inline(f"❦ Extra ❦ ({len(GRP_INFO['extra'])})", data="extra_menu"),
+            Button.inline("x Close Menu x", data="close"),
         ),
     ]
 
@@ -163,9 +163,9 @@ def paginate_help(
                 modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
             ] + [
                 (
-                    Button.inline("❦", data=f"{prefix}_prev({modulo_page})_plugin"),
+                    Button.inline("⌫", data=f"{prefix}_prev({modulo_page})_plugin"),
                     Button.inline("⚙️ Main Menu", data="mainmenu"),
-                    Button.inline("❦", data=f"{prefix}_next({modulo_page})_plugin"),
+                    Button.inline("⌦", data=f"{prefix}_next({modulo_page})_plugin"),
                 )
             ]
         else:
@@ -178,7 +178,7 @@ def paginate_help(
         ] + [
             (
                 Button.inline(
-                    "❦",
+                    "⌫",
                     data=f"{prefix}_prev({modulo_page})_command_{category_plugins}_{category_pgno}",
                 ),
                 Button.inline(
@@ -186,7 +186,7 @@ def paginate_help(
                     data=f"back_plugin_{category_plugins}_{category_pgno}",
                 ),
                 Button.inline(
-                    "❦",
+                    "⌦",
                     data=f"{prefix}_next({modulo_page})_command_{category_plugins}_{category_pgno}",
                 ),
             )
@@ -222,28 +222,22 @@ async def inline_handler(event):  # sourcery no-metrics
         match2 = re.findall(inf, query)
         hid = re.compile("hide (.*)")
         match3 = re.findall(hid, query)
-        if query.startswith("**ibel-ubot"):
+        if query.startswith("**Ibel's Ubot"):
             buttons = [
                 (
                     Button.inline("Stats", data="stats"),
-                    Button.url("Repo", "https://github.com/hitokizzy/ibel-ubot"),
+                    Button.url("Repo", "https://github.com/hitokizzy/anuan"),
                 )
             ]
-            ALIVE_PIC = (
-                gvarstatus("ALIVE_PIC")
-                or "https://telegra.ph/file/486715ddbbb29da89b2ed.png"
-            )
-            IALIVE_PIC = (
-                gvarstatus("IALIVE_PIC")
-                or "https://telegra.ph/file/486715ddbbb29da89b2ed.png"
-            )
+            ALIVE_PIC = gvarstatus("ALIVE_PIC") or ("https://telegra.ph/file/486715ddbbb29da89b2ed.png")
+            IALIVE_PIC = gvarstatus("IALIVE_PIC") or ("https://telegra.ph/file/486715ddbbb29da89b2ed.png")
             if IALIVE_PIC:
-                SAD = [x for x in IALIVE_PIC.split()]
-                PIC = list(SAD)
+                CAT = [x for x in IALIVE_PIC.split()]
+                PIC = list(CAT)
                 I_IMG = random.choice(PIC)
             if not IALIVE_PIC and ALIVE_PIC:
-                SAD = [x for x in ALIVE_PIC.split()]
-                PIC = list(SAD)
+                CAT = [x for x in ALIVE_PIC.split()]
+                PIC = list(CAT)
                 I_IMG = random.choice(PIC)
             elif not IALIVE_PIC:
                 I_IMG = None
@@ -315,13 +309,13 @@ async def inline_handler(event):  # sourcery no-metrics
                 try:
                     u = await event.client.get_entity(u)
                     if u.username:
-                        zzy = f"@{u.username}"
+                        iraa = f"@{u.username}"
                     else:
-                        zzy = f"[{u.first_name}](tg://user?id={u.id})"
+                        iraa = f"[{u.first_name}](tg://user?id={u.id})"
                     u = int(u.id)
                 except ValueError:
                     # ValueError: Could not find the input entity
-                    zzy = f"[user](tg://user?id={u})"
+                    iraa = f"[user](tg://user?id={u})"
             except ValueError:
                 # if u is username
                 try:
@@ -329,9 +323,9 @@ async def inline_handler(event):  # sourcery no-metrics
                 except ValueError:
                     return
                 if u.username:
-                    zzy = f"@{u.username}"
+                    iraa = f"@{u.username}"
                 else:
-                    zzy = f"[{u.first_name}](tg://user?id={u.id})"
+                    iraa = f"[{u.first_name}](tg://user?id={u.id})"
                 u = int(u.id)
             except Exception:
                 return
@@ -341,7 +335,7 @@ async def inline_handler(event):  # sourcery no-metrics
             buttons = [Button.inline("show message 🔐", data=f"troll_{timestamp}")]
             result = builder.article(
                 title="Troll Message",
-                text=f"Only {zzy} cannot access this message!",
+                text=f"Only {iraa} cannot access this message!",
                 buttons=buttons,
             )
             await event.answer([result] if result else None)
@@ -365,13 +359,13 @@ async def inline_handler(event):  # sourcery no-metrics
                 try:
                     u = await event.client.get_entity(u)
                     if u.username:
-                        zzy = f"@{u.username}"
+                        iraa = f"@{u.username}"
                     else:
-                        zzy = f"[{u.first_name}](tg://user?id={u.id})"
+                        iraa = f"[{u.first_name}](tg://user?id={u.id})"
                     u = int(u.id)
                 except ValueError:
                     # ValueError: Could not find the input entity
-                    zzy = f"[user](tg://user?id={u})"
+                    iraa = f"[user](tg://user?id={u})"
             except ValueError:
                 # if u is username
                 try:
@@ -379,9 +373,9 @@ async def inline_handler(event):  # sourcery no-metrics
                 except ValueError:
                     return
                 if u.username:
-                    zzy = f"@{u.username}"
+                    iraa = f"@{u.username}"
                 else:
-                    zzy = f"[{u.first_name}](tg://user?id={u.id})"
+                    iraa = f"[{u.first_name}](tg://user?id={u.id})"
                 u = int(u.id)
             except Exception:
                 return
@@ -391,7 +385,7 @@ async def inline_handler(event):  # sourcery no-metrics
             buttons = [Button.inline("show message 🔐", data=f"secret_{timestamp}")]
             result = builder.article(
                 title="secret message",
-                text=f"🔒 A whisper message to {zzy}, Only he/she can open it.",
+                text=f"🔒 A whisper message to {iraa}, Only he/she can open it.",
                 buttons=buttons,
             )
             await event.answer([result] if result else None)
@@ -414,7 +408,7 @@ async def inline_handler(event):  # sourcery no-metrics
             buttons = [Button.inline("Read Message ", data=f"hide_{timestamp}")]
             result = builder.article(
                 title="Hidden Message",
-                text=f"✖✖✖",
+                text=f"x",
                 buttons=buttons,
             )
             await event.answer([result] if result else None)
@@ -426,8 +420,8 @@ async def inline_handler(event):  # sourcery no-metrics
         elif string == "help":
             _result = main_menu()
             result = builder.article(
-                title="© ibel ubot Help",
-                description="Help menu for ibel ubot",
+                title="© CatUserbot Help",
+                description="Help menu for CatUserbot",
                 text=_result[0],
                 buttons=_result[1],
                 link_preview=False,
@@ -531,34 +525,31 @@ async def inline_handler(event):  # sourcery no-metrics
             buttons = [
                 Button.inline(text="Show Options.", data="show_pmpermit_options"),
             ]
-            PM_PIC = (
-                gvarstatus("pmpermit_pic")
-                or "https://telegra.ph/file/486715ddbbb29da89b2ed.png"
-            )
+            PM_PIC = gvarstatus("pmpermit_pic") or ("https://telegra.ph/file/486715ddbbb29da89b2ed.png")
             if PM_PIC:
-                SAD = [x for x in PM_PIC.split()]
-                PIC = list(SAD)
-                SAD_IMG = random.choice(PIC)
+                CAT = [x for x in PM_PIC.split()]
+                PIC = list(CAT)
+                CAT_IMG = random.choice(PIC)
             else:
-                SAD_IMG = None
+                CAT_IMG = None
             query = gvarstatus("pmpermit_text")
-            if SAD_IMG and SAD_IMG.endswith((".jpg", ".jpeg", ".png")):
+            if CAT_IMG and CAT_IMG.endswith((".jpg", ".jpeg", ".png")):
                 result = builder.photo(
-                    SAD_IMG,
-                    # title="Alive ibel",
+                    CAT_IMG,
+                    # title="Alive cat",
                     text=query,
                     buttons=buttons,
                 )
-            elif SAD_IMG:
+            elif CAT_IMG:
                 result = builder.document(
-                    SAD_IMG,
-                    title="Alive ibel",
+                    CAT_IMG,
+                    title="Alive cat",
                     text=query,
                     buttons=buttons,
                 )
             else:
                 result = builder.article(
-                    title="Alive ibel",
+                    title="Alive cat",
                     text=query,
                     buttons=buttons,
                 )
@@ -566,10 +557,10 @@ async def inline_handler(event):  # sourcery no-metrics
     else:
         buttons = [
             (
-                Button.url("Source code", "https://github.com/hitokizzy/ibel-ubot"),
+                Button.url("Source code", "https://github.com/hitokizzy/anuan"),
                 Button.url(
                     "Deploy",
-                    "htpps://xnxx.com",
+                    "https://xnxx.com",
                 ),
             )
         ]
@@ -578,14 +569,14 @@ async def inline_handler(event):  # sourcery no-metrics
             url=SADLOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "Deploy Your Own ibel-ubot", "md"
+            "Get Your Own Ibel's Ubot", "md"
         )
         result = types.InputBotInlineResult(
             id=str(uuid4()),
             type="photo",
-            title="ibel-ubot",
+            title="Ibel's Ubot",
             description="Deploy yourself",
-            url="https://github.com/hitokizzy/ibel-ubot",
+            url="https://github.com/hitokizzy/anuan",
             thumb=photo,
             content=photo,
             send_message=types.InputBotInlineMessageMediaAuto(
@@ -608,9 +599,9 @@ async def on_plug_in_callback_query_handler(event):
 async def on_plugin_callback_query_handler(event):
     text = f"𝙿𝚕𝚞𝚐𝚒𝚗𝚜: {len(PLG_INFO)}\
         \n𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜: {len(CMD_INFO)}\
-        \n\n{tr}𝚑𝚎𝚕𝚙 <𝚙𝚕𝚞𝚐𝚒𝚗> : 𝙵𝚘𝚛 𝚜𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝚙𝚕𝚞𝚐𝚒𝚗 𝚒𝚗𝚏𝚘.\
-        \n{tr}𝚑𝚎𝚕𝚙 -𝚌 <𝚌𝚘𝚖𝚖𝚊𝚗𝚍> : 𝙵𝚘𝚛 𝚊𝚗𝚢 𝚌𝚘𝚖𝚖𝚊𝚗𝚍 𝚒𝚗𝚏𝚘.\
-        \n{tr}𝚜 <𝚚𝚞𝚎𝚛𝚢> : 𝚃𝚘 𝚜𝚎𝚊𝚛𝚌𝚑 𝚊𝚗𝚢 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜.\
+        \n\n{tr}help <𝚙𝚕𝚞𝚐𝚒𝚗> : For Specific Command Info.\
+        \n{tr}help -𝚌 <𝚌𝚘𝚖𝚖𝚊𝚗𝚍> : For Command Info.\
+        \n{tr}s <𝚚𝚞𝚎𝚛𝚢> : To search any command.\
         "
     await event.answer(text, cache_time=0, alert=True)
 

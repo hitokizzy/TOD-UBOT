@@ -64,7 +64,7 @@ async def cmdinfo(input_str, event, plugin=False):
         category = getkey(plugin)
         if category is not None:
             outstr += f"**category :** `{category}`\n\n"
-    outstr += f"**✘  Intro :**\n{about[0]}"
+    outstr += f"** Intro :**\n{about[0]}"
     return outstr
 
 
@@ -121,7 +121,7 @@ async def cmdlist():
             for cmd in sorted(cmds):
                 outstr += f"  - `{cmdprefix}{cmd}`\n"
             outstr += "\n"
-    outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help -c <command name>`"
+    outstr += f"** Usage : ** `{cmdprefix}help -c <command name>`"
     return outstr
 
 
