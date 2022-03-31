@@ -3,7 +3,7 @@ from pytgcalls.types.input_stream import AudioPiped
 from pytgcalls.exceptions import AlreadyJoinedError
 from telethon.utils import get_display_name
 from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl import types, emoji
+from telethon.tl import types
 
 
 from ibels import ibel
@@ -51,7 +51,7 @@ async def join_(event):
                 ),
             stream_type=StreamType().pulse_stream,
             )
-            await edit_delete(geezav, f"{emoji.CHECK_MARK_BUTTON}**{from_user} Berhasil Naik Ke VC Group!**")
+            await edit_delete(geezav, f"**{from_user} Berhasil Naik Ke VC Group!**")
         except AlreadyJoinedError:
             await call_py.leave_group_call(chat_id)
             await edit_delete(
@@ -88,7 +88,7 @@ async def leavevc(event):
             await call_py.leave_group_call(chat_id)
             await edit_delete(
                 geezav,
-                f"{emoji.CHECK_MARK_BUTTON}{from_user} Berhasil Turun Dari VC Group!",
+                f"{from_user} Berhasil Turun Dari VC Group!",
             )
         except Exception as e:
             await geezav.edit(f"**INFO:** `{e}`")
