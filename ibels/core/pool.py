@@ -8,7 +8,7 @@ from motor.frameworks.asyncio import _EXECUTOR
 from .logger import logging
 
 _LOG = logging.getLogger(__name__)
-_LOG_STR = "<<<!  ||||  %s  ||||  !>>>"
+_LOG_STR = "<<<!    %s   !>>>"
 
 
 def submit_thread(func: Callable[[Any], Any], *args: Any, **kwargs: Any) -> Future:
