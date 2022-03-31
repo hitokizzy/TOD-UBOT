@@ -1,7 +1,7 @@
 import sys
 import ibels
 from ibels import BOTLOG_CHATID, HEROKU_APP, PM_LOGGER_GROUP_ID
-
+from pytgcalls import idle
 from .Config import Config
 from .core.logger import logging
 from .core.session import ibel, call_py
