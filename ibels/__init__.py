@@ -10,8 +10,8 @@ __license__ = "GNU Affero General Public License v3.0"
 __author__ = "ibel-ubot <https://github.com/hitokizzy/ibel-ubot>"
 __copyright__ = "ibel-ubot Copyright (C) 2020 - 2022  " + __author__
 
-ibel.version = __version__
-ibel.tgbot.version = __version__
+ibel.version = 3.0
+ibel.tgbot.version = 3.0
 LOGS = logging.getLogger("ibel-ubot")
 bot = ibel
 
