@@ -502,7 +502,7 @@ else
 	md5=$(echo -n "$link" | $OPENSSL_MD5 | grep -E -o '[0-9a-f]{32}')
 
 	if [ -f ".megadown/${md5}" ];then
-		mc_link_info=$(ibel ".megadown/${md5}")
+		mc_link_info=$(tod ".megadown/${md5}")
 	else
 		mc_link_info=$(get_mc_link_info "$link")
 

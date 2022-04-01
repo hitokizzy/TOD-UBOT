@@ -1,13 +1,13 @@
 {
-  "name": "ibel-ubot",
+  "name": "TODUBOT",
   "description": "Shut up, couse this is just a couple of code",
-  "logo": "https://telegra.ph/file/486715ddbbb29da89b2ed.png",
+  "logo": "https://telegra.ph/file/902492291f182109319ee.png",
   "keywords": [
     "plugin",
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/hitokizzy/ibel-ubot/",
+  "repository": "https://github.com/hitokizzy/TODUBOT/",
   "stack" : "container",
   "env": {
     "ALIVE_NAME": {
