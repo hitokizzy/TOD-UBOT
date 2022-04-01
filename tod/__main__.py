@@ -15,7 +15,7 @@ from .utils import (
 
 LOGS = logging.getLogger("todubot")
 
-print(tod.__copyright__)
+#print(tod.__copyright__)
 print("Licensed under the terms of the " + tod.__license__)
 
 cmdhr = Config.COMMAND_HAND_LER

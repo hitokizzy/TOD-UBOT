@@ -19,9 +19,9 @@ StartTime = time.time()
 sadversion = "1.0"
 
 if Config.UPSTREAM_REPO == "hitokizzy":
-    UPSTREAM_REPO_URL = "https://github.com/hitokizzy/TODUBOT"
+    UPSTREAM_REPO_URL = "https://github.com/hitokizzy/TOD-UBOT"
 elif Config.UPSTREAM_REPO == "tod":
-    UPSTREAM_REPO_URL = "https://github.com/izzy-adeeva/TODUBOT"
+    UPSTREAM_REPO_URL = "https://github.com/izzy-adeeva/TOD-UBOT"
 else:
     UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 
