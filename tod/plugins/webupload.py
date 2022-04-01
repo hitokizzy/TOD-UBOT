@@ -16,7 +16,7 @@ plugin_category = "misc"
 LOGS = logging.getLogger(__name__)
 
 # originally created by
-# https://github.com/Total-Noob-69/X-tra-Telegram/blob/master/tods/plugins/webupload.py
+# https://github.com/Total-Noob-69/X-tra-Telegram/blob/master/tod/plugins/webupload.py
 
 
 link_regex = re.compile(

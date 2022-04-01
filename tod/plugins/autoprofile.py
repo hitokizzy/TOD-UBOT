@@ -44,9 +44,9 @@ LOGS = logging.getLogger(__name__)
 
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
-autopic_path = os.path.join(os.getcwd(), "tods", "original_pic.png")
-digitalpic_path = os.path.join(os.getcwd(), "tods", "digital_pic.png")
-autophoto_path = os.path.join(os.getcwd(), "tods", "photo_pfp.png")
+autopic_path = os.path.join(os.getcwd(), "tod", "original_pic.png")
+digitalpic_path = os.path.join(os.getcwd(), "tod", "digital_pic.png")
+autophoto_path = os.path.join(os.getcwd(), "tod", "photo_pfp.png")
 
 digitalpfp = Config.DIGITAL_PIC or "https://telegra.ph/file/aeaebe33b1f3988a0b690.jpg"
 

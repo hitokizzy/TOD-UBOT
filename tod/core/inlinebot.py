@@ -250,13 +250,13 @@ async def inline_handler(event):  # sourcery no-metrics
             elif I_IMG:
                 result = builder.document(
                     I_IMG,
-                    title="Alive tods",
+                    title="Alive tod",
                     text=query,
                     buttons=buttons,
                 )
             else:
                 result = builder.article(
-                    title="Alive tods",
+                    title="Alive tod",
                     text=query,
                     buttons=buttons,
                 )
@@ -298,7 +298,7 @@ async def inline_handler(event):  # sourcery no-metrics
             query = query[7:]
             user, txct = query.split(" ", 1)
             builder = event.builder
-            troll = os.path.join("./tods", "troll.txt")
+            troll = os.path.join("./tod", "troll.txt")
             try:
                 jsondata = json.load(open(troll))
             except Exception:
@@ -348,7 +348,7 @@ async def inline_handler(event):  # sourcery no-metrics
             query = query[7:]
             user, txct = query.split(" ", 1)
             builder = event.builder
-            secret = os.path.join("./tods", "secrets.txt")
+            secret = os.path.join("./tod", "secrets.txt")
             try:
                 jsondata = json.load(open(secret))
             except Exception:
@@ -397,7 +397,7 @@ async def inline_handler(event):  # sourcery no-metrics
         elif match3:
             query = query[5:]
             builder = event.builder
-            hide = os.path.join("./tods", "hide.txt")
+            hide = os.path.join("./tod", "hide.txt")
             try:
                 jsondata = json.load(open(hide))
             except Exception:

@@ -20,17 +20,17 @@ def load_module(shortname, plugin_path=None):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        path = Path(f"tods/plugins/{shortname}.py")
+        path = Path(f"tod/plugins/{shortname}.py")
         checkplugins(path)
-        name = "tods.plugins.{}".format(shortname)
+        name = "tod.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         LOGS.info("Successfully imported " + shortname)
     else:
         if plugin_path is None:
-            path = Path(f"tods/plugins/{shortname}.py")
-            name = f"tods.plugins.{shortname}"
+            path = Path(f"tod/plugins/{shortname}.py")
+            name = f"tod.plugins.{shortname}"
         else:
             path = Path((f"{plugin_path}/{shortname}.py"))
             name = f"{plugin_path}/{shortname}".replace("/", ".")
@@ -57,7 +57,7 @@ def load_module(shortname, plugin_path=None):
         mod.borg = tod
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules["tods.plugins." + shortname] = mod
+        sys.modules["tod.plugins." + shortname] = mod
         LOGS.info("Successfully imported " + shortname)
 
 
@@ -83,7 +83,7 @@ def remove_plugin(shortname):
     except BaseException:
         pass
     try:
-        name = f"tods.plugins.{shortname}"
+        name = f"tod.plugins.{shortname}"
         for i in reversed(range(len(tod._event_builders))):
             ev, cb = tod._event_builders[i]
             if cb.__module__ == name:

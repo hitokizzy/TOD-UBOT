@@ -10,8 +10,8 @@ from tod import tod
 @tod.tgbot.on(CallbackQuery(data=re.compile(b"troll_(.*)")))
 async def on_plug_in_callback_query_handler(event):
     timestamp = int(event.pattern_match.group(1).decode("UTF-8"))
-    if os.path.exists("./tods/troll.txt"):
-        jsondata = json.load(open("./tods/troll.txt"))
+    if os.path.exists("./tod/troll.txt"):
+        jsondata = json.load(open("./tod/troll.txt"))
         try:
             message = jsondata[f"{timestamp}"]
             userid = message["userid"]

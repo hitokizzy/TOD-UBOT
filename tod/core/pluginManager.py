@@ -76,7 +76,7 @@ async def restart_script(client: TelegramClient, zzy):
     except Exception as e:
         LOGS.error(e)
     executable = sys.executable.replace(" ", "\\ ")
-    args = [executable, "-m", "tods"]
+    args = [executable, "-m", "tod"]
     os.execle(executable, *args, os.environ)
     os._exit(143)
 

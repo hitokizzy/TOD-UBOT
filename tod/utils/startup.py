@@ -145,7 +145,7 @@ async def load_plugins(folder):
     """
     To load plugins from the mentioned folder
     """
-    path = f"tods/{folder}/*.py"
+    path = f"tod/{folder}/*.py"
     files = glob.glob(path)
     files.sort()
     for name in files:
@@ -160,7 +160,7 @@ async def load_plugins(folder):
                         try:
                             load_module(
                                 shortname.replace(".py", ""),
-                                plugin_path=f"tods/{folder}",
+                                plugin_path=f"tod/{folder}",
                             )
                             break
                         except ModuleNotFoundError as e:
@@ -169,9 +169,9 @@ async def load_plugins(folder):
                             if check > 5:
                                 break
                 else:
-                    os.remove(Path(f"tods/{folder}/{shortname}.py"))
+                    os.remove(Path(f"tod/{folder}/{shortname}.py"))
             except Exception as e:
-                os.remove(Path(f"tods/{folder}/{shortname}.py"))
+                os.remove(Path(f"tod/{folder}/{shortname}.py"))
                 LOGS.info(f"unable to load {shortname} because of error {e}")
 
 
@@ -238,6 +238,6 @@ async def verifyLoggerGroup():
             )
     if flag:
         executable = sys.executable.replace(" ", "\\ ")
-        args = [executable, "-m", "tods"]
+        args = [executable, "-m", "tod"]
         os.execle(executable, *args, os.environ)
         sys.exit(0)
