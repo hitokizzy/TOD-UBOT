@@ -17,7 +17,7 @@ else:
     session = "ibelubot"
 
 try:
-    ibel = (ibelubotClient, TelegramClient(
+    ibel = ibelubotClient(
         session=session,
         api_id=Config.APP_ID,
         api_hash=Config.API_HASH,
@@ -26,8 +26,8 @@ try:
         connection=ConnectionTcpAbridged,
         auto_reconnect=True,
         connection_retries=None,
-    ))
-    call_py = PyTgCalls
+    )
+    call_py = PyTgCalls(TelegramClient)
 except Exception as e:
     print(f"STRING_SESSION - {e}")
     sys.exit()
