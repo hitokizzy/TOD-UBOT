@@ -59,10 +59,11 @@ async def startup_process():
         await add_bot_to_logger_group(PM_LOGGER_GROUP_ID)
     await startupmessage()
     sadcheck.sucess = True
-    await call_py.start()
+    #await call_py.start()
+    return
     
 ibel.loop.run_until_complete(startup_process())
-idle()
+#idle()
 if len(sys.argv) not in (1, 3, 4):
     ibel.disconnect()
 elif not sadcheck.sucess:

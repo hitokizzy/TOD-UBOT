@@ -27,7 +27,7 @@ try:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py = PyTgCalls(ibel)
+    #call_py = PyTgCalls(ibel)
 except Exception as e:
     print(f"STRING_SESSION - {e}")
     sys.exit()
