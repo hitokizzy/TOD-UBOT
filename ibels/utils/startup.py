@@ -65,7 +65,7 @@ async def startupmessage():
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/486715ddbbb29da89b2ed.png",
                 caption="**Your ibel's ubot is activated.**",
-                buttons=[(Button.url("Support", "https://xnxx.com"),)],
+                buttons=[(Button.url("Geez", "https://t.me/GeezSupport"),),(Button.url("RAM", "https://t.me/ramsupportt"),)],
             )
     except Exception as e:
         LOGS.error(e)
