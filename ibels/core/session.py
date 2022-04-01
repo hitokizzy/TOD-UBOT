@@ -1,6 +1,5 @@
 import sys
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
-from telethon import TelegramClient
 from telethon.sessions import StringSession
 from ..Config import Config
 from .client import ibelubotClient
