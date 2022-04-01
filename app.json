@@ -7,7 +7,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/hitokizzy/TODUBOT/",
+  "repository": "https://github.com/hitokizzy/TOD-UBOT/",
   "stack" : "container",
   "env": {
     "ALIVE_NAME": {

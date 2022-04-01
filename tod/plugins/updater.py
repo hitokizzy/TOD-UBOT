@@ -263,7 +263,7 @@ async def upstream(event):
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
         return await event.respond(
-            f"do `{cmdhd}update deploy` to update the TODUBOT"
+            f"do `{cmdhd}update deploy` to update the TOD-UBOT"
         )
 
     if force_update:
@@ -281,7 +281,7 @@ async def upstream(event):
 )
 async def upstream(event):
     event = await edit_or_reply(event, "`Pulling the repo wait a sec ....`")
-    off_repo = "https://github.com/hitokizzy/TODUBOT"
+    off_repo = "https://github.com/hitokizzy/TOD-UBOT"
     os.chdir("/bin")
     try:
         txt = "`Oops.. Updater cannot continue due to "
@@ -316,7 +316,7 @@ async def upstream(event):
     command=("TODUBOT", plugin_category),
     info={
         "header": "To update to Sad.",
-        "usage": "{tr}TODUBOT",
+        "usage": "{tr}TOD-UBOT",
     },
 )
 async def variable(var):
@@ -335,4 +335,4 @@ async def variable(var):
         )
     heroku_var = app.config()
     await edit_or_reply(var, "`Changing... wait for 2-3 minutes.`")
-    heroku_var["UPSTREAM_REPO"] = "https://github.com/hitokizzy/TODUBOT"
+    heroku_var["UPSTREAM_REPO"] = "https://github.com/hitokizzy/TOD-UBOT"
