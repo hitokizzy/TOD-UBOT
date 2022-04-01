@@ -81,7 +81,7 @@ async def startupmessage():
         if msg_details:
             await tod.check_testcases()
             message = await tod.get_messages(msg_details[0], ids=msg_details[1])
-            text = message.text + "\n\n**Ibel's Ubot back Alive.**"
+            text = message.text + "\n\n**tod Ubot back Alive.**"
             await tod.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
                 await tod.send_message(

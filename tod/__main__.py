@@ -21,9 +21,9 @@ print("Licensed under the terms of the " + tod.__license__)
 cmdhr = Config.COMMAND_HAND_LER
 
 try:
-    LOGS.info("Starting Ibel's Userbot")
+    LOGS.info("Starting tod Userbot")
     tod.loop.run_until_complete(setup_bot())
-    LOGS.info("Ibel's Userbot Startup Completed")
+    LOGS.info("tod Userbot Startup Completed")
 except Exception as e:
     LOGS.error(f"{e}")
     sys.exit()
@@ -46,9 +46,9 @@ async def startup_process():
     await load_plugins("plugins")
     await load_plugins("assistant")
     print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
-    print("Ibel's Userbot is officially working.!!!")
+    print("tod Userbot is officially working.!!!")
     print(
-        f"Congratulation, now type {cmdhr}alive to see message if Ibel's Userbot is live\
+        f"Congratulation, now type {cmdhr}alive to see message if tod Userbot is live\
         \nIf you need assistance, head to https://t.me/Kang_keong17"
     )
     print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")

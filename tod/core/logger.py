@@ -5,4 +5,4 @@ logging.basicConfig(
     level=logging.INFO,
     datefmt="%H:%M:%S",
 )
-logging.getLogger("pytgcalls").setLevel(logging.ERROR)
+#logging.getLogger("pytgcalls").setLevel(logging.ERROR)

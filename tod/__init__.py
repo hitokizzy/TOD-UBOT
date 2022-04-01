@@ -12,7 +12,7 @@ __copyright__ = "TODUBOT Copyright (C) 2020 - 2022  " + __author__
 
 tod.version = __version__
 tod.tgbot.version = __version__
-LOGS = logging.getLogger("TODUBOT")
+LOGS = logging.getLogger("todubot")
 bot = tod
 
 StartTime = time.time()

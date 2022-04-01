@@ -53,7 +53,7 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"Ibel's Ubot Helper\
+    text = f"tod Ubot Helper\
         \n𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗱 𝗯𝘆 {mention}"
     buttons = [
         (Button.inline(" Info", data="check"),),
@@ -222,7 +222,7 @@ async def inline_handler(event):  # sourcery no-metrics
         match2 = re.findall(inf, query)
         hid = re.compile("hide (.*)")
         match3 = re.findall(hid, query)
-        if query.startswith("**Ibel's Ubot"):
+        if query.startswith("**tod Ubot"):
             buttons = [
                 (
                     Button.inline("Stats", data="stats"),
@@ -569,12 +569,12 @@ async def inline_handler(event):  # sourcery no-metrics
             url=TODLOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "Get Your Own Ibel's Ubot", "md"
+            "Get Your Own tod Ubot", "md"
         )
         result = types.InputBotInlineResult(
             id=str(uuid4()),
             type="photo",
-            title="Ibel's Ubot",
+            title="tod Ubot",
             description="Deploy yourself",
             url="https://github.com/hitokizzy/anuan",
             thumb=photo,
