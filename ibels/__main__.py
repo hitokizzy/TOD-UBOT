@@ -66,9 +66,6 @@ ibel.loop.run_until_complete(startup_process())
 #idle()
 if len(sys.argv) not in (1, 3, 4):
     ibel.disconnect()
-elif not sadcheck.sucess:
-    if HEROKU_APP is not None:
-        HEROKU_APP.restart()
 else:
     try:
         ibel.run_until_disconnected()
