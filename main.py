@@ -6,7 +6,7 @@ API_HASH = os.environ.get("API_HASH") or None
 SESSION_NAME = os.environ.get("SESSION_NAME", None)
 
 PLUGINS = dict(
-    root="tod",
+    root="tod/plugins",
     include=[
         "vc.player"
     ]
