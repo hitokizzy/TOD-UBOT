@@ -1,8 +1,3 @@
-"""
-imported from nicegrill
-modified by @mrconfused
-QuotLy: Avaible commands: .qbot
-"""
 
 import io
 import os
@@ -15,7 +10,8 @@ from PIL import Image, ImageDraw, ImageFont
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.utils import get_display_name
-
+from ..helpers.functions import Quotly, all_col
+from random import choice
 from tod import tod
 
 from ..core.managers import edit_delete, edit_or_reply
@@ -26,6 +22,7 @@ FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
 plugin_category = "fun"
 
+quotly = Quotly()
 
 def get_warp_length(width):
     return int((20.0 / 1024.0) * (width + 0.0))
@@ -147,33 +144,66 @@ async def q_pic(event):  # sourcery no-metrics
         "usage": "{tr}q",
     },
 )
-async def stickerchat(sadquotes):
-    "Makes your message as sticker quote"
-    reply = await sadquotes.get_reply_message()
-    if not reply:
-        return await edit_or_reply(
-            sadquotes, "`I cant quote the message . reply to a message`"
+async def quott_(event):
+    match = event.pattern_match.group(1).strip()
+    if not event.is_reply:
+        return await event.eor("`Reply to Message..`")
+    msg = await event.eor("Processing...")
+    reply = await event.get_reply_message()
+    replied_to, reply_ = None, None
+    if match:
+        spli_ = match.split(maxsplit=1)
+        if (spli_[0] in ["r", "reply"]) or (
+            spli_[0].isdigit() and int(spli_[0]) in range(1, 21)
+        ):
+            if spli_[0].isdigit():
+                if not event.client._bot:
+                    reply_ = await event.client.get_messages(
+                        event.chat_id,
+                        min_id=event.reply_to_msg_id - 1,
+                        reverse=True,
+                        limit=int(spli_[0]),
+                    )
+                else:
+                    id_ = reply.id
+                    reply_ = []
+                    for msg_ in range(id_, id_ + int(spli_[0])):
+                        msh = await event.client.get_messages(event.chat_id, ids=msg_)
+                        if msh:
+                            reply_.append(msh)
+            else:
+                replied_to = await reply.get_reply_message()
+            try:
+                match = spli_[1]
+            except IndexError:
+                match = None
+    user = None
+    if not reply_:
+        reply_ = reply
+    if match:
+        match = match.split(maxsplit=1)
+    if match:
+        if match[0].startswith("@") or match[0].isdigit():
+            try:
+                match_ = await event.client.parse_id(match[0])
+                user = await event.client.get_entity(match_)
+            except ValueError:
+                pass
+            match = match[1] if len(match) == 2 else None
+        else:
+            match = match[0]
+    if match == "random":
+        match = choice(all_col)
+    try:
+        file = await quotly.create_quotly(
+            reply_, bg=match, reply=replied_to, sender=user
         )
-    fetchmsg = reply.message
-    repliedreply = None
-    mediatype = media_type(reply)
-    if mediatype and mediatype in ["Photo", "Round Video", "Gif"]:
-        return await edit_or_reply(sadquotes, "`Replied message is not supported now`")
-    sadevent = await edit_or_reply(sadquotes, "`Making quote...`")
-    user = (
-        await sadquotes.client.get_entity(reply.forward.sender)
-        if reply.fwd_from
-        else reply.sender
-    )
-    res, sadmsg = await process(fetchmsg, user, sadquotes.client, reply, repliedreply)
-    if not res:
-        return
-    outfi = os.path.join("./temp", "sticker.png")
-    sadmsg.save(outfi)
-    endfi = convert_tosticker(outfi)
-    await sadquotes.client.send_file(sadquotes.chat_id, endfi, reply_to=reply)
-    await sadevent.delete()
-    os.remove(endfi)
+    except Exception as er:
+        return await msg.edit(str(er))
+    message = await reply.reply("Quotly by TOD-UBOT", file=file)
+    os.remove(file)
+    await msg.delete()
+    return message
 
 
 @tod.tod_cmd(

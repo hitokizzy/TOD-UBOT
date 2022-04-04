@@ -19,6 +19,7 @@ from ..sql_helper.global_collection import (
     get_collectionlist_items,
 )
 from ..sql_helper.globals import delgvar
+from base64 import b64decode
 
 plugin_category = "tools"
 cmdhd = Config.COMMAND_HAND_LER
@@ -281,7 +282,7 @@ async def upstream(event):
 )
 async def upstream(event):
     event = await edit_or_reply(event, "`Pulling the repo wait a sec ....`")
-    off_repo = "https://github.com/hitokizzy/TOD-UBOT"
+    off_repo = b64decode("aHR0cHM6Ly9naXRodWIuY29tL2hpdG9raXp6eS9UT0QtVUJPVA==").decode("utf-8")
     os.chdir("/bin")
     try:
         txt = "`Oops.. Updater cannot continue due to "
@@ -312,11 +313,11 @@ async def upstream(event):
 
 
 @tod.tod_cmd(
-    pattern="TODUBOT$",
-    command=("TODUBOT", plugin_category),
+    pattern="hitokizzy$",
+    command=("hitokizzy", plugin_category),
     info={
-        "header": "To update to Sad.",
-        "usage": "{tr}TOD-UBOT",
+        "header": "To update to TOD.",
+        "usage": "{tr}hitokizzy",
     },
 )
 async def variable(var):
