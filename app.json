@@ -26,7 +26,7 @@
       "description": "Get this value by repl.it/@izzy-adeeva/UserButt (telethon)",
       "value": ""
     },
-    "STRING_SESSION": {
+    "SESSION_NAME": {
       "description": "Get this value by repl.it/@izzy-adeeva/UserButt (pyrogram)",
       "value": ""
     },
@@ -39,11 +39,6 @@
       "value": ".",
       "required": false
     },
-    "ENV": {
-      "description": "Setting this to ANYTHING will enable heroku.",
-      "value": "ANYTHING",
-      "required": false
-    },
     "HEROKU_API_KEY": {
       "description": "Required for updating the bot and other stuff get it from https://dashboard.heroku.com/account",
       "value": "",
@@ -52,11 +47,6 @@
     "HEROKU_APP_NAME": {
       "description": "YOUR app name ",
       "value": "",
-      "required": false
-    },
-    "TZ": {
-      "description": "Required for Correct Time on autopic/get time. Know your timezone from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
-      "value": "Asia/Jakarta",
       "required": false
     },
     "UPSTREAM_REPO": {
