@@ -3,7 +3,6 @@ import zipfile
 from random import choice
 from textwrap import wrap
 from uuid import uuid4
-from telethon.tl import types
 
 import requests
 from ..utils.extdl import install_pip
