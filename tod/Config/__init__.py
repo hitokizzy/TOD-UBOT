@@ -1,1 +1,1 @@
-from .tod_config import Config
+from tod.Config.tod_config import Config
