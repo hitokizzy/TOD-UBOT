@@ -9,7 +9,7 @@ from telethon.utils import get_display_name, get_peer_id
 import requests
 from ..utils.extdl import install_pip
 from ..utils.utils import runcmd
-from core import DEVLIST
+from tod.core import DEVLIST
 try:
     from imdb import IMDb
 except ModuleNotFoundError:
