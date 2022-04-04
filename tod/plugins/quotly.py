@@ -20,7 +20,6 @@ FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
 plugin_category = "fun"
 
-quotly = Quotly()
 
 def get_warp_length(width):
     return int((20.0 / 1024.0) * (width + 0.0))
