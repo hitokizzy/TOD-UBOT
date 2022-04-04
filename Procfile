@@ -1,1 +1,1 @@
-worker: python3 -m tod & python3 -m main.py
+worker: bash startup.sh
