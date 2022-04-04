@@ -26,6 +26,10 @@
       "description": "Get this value by repl.it/@izzy-adeeva/UserButt (telethon)",
       "value": ""
     },
+    "STRING_SESSION": {
+      "description": "Get this value by repl.it/@izzy-adeeva/UserButt (pyrogram)",
+      "value": ""
+    },
     "TG_BOT_TOKEN": {
       "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather and get the token of your bot.Worth it. Get it.",
       "value": ""
