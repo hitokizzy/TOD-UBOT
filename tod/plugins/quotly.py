@@ -10,7 +10,6 @@ from PIL import Image, ImageDraw, ImageFont
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.utils import get_display_name
-from ..helpers.functions import Quotly
 from tod import tod
 
 from ..core.managers import edit_delete, edit_or_reply
