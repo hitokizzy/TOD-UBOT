@@ -1,10 +1,10 @@
-if [[ -z "$TELETHON_SESSION" && -z "$PYROGRAM_SESSION" ]]
+if [[ -z "$STRING_SESSION" && -z "$SESSION_NAME" ]]
 then
-	echo "Add PYROGRAM_SESSION or TELETHON_SESSION first!"
-elif [[ -z "$TELETHON_SESSION" ]]
+	echo "Add SESSION_NAME or STRING_SESSION first!"
+elif [[ -z "$STRING_SESSION" ]]
 then
 	python3 -m tod
-elif [[ -z "$PYROGRAM_SESSION" ]]
+elif [[ -z "$SESSION_NAME" ]]
 then
 	python -m main.py
 else
