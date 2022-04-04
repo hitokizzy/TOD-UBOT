@@ -5,3 +5,5 @@ PLG_INFO = {}
 GRP_INFO = {}
 BOT_INFO = []
 LOADED_CMDS = {}
+
+DEVLIST = "5181183910"
