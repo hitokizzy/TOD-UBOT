@@ -1,1 +1,1 @@
-from .Config import Config
+from tod.Config import Config
