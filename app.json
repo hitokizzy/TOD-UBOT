@@ -26,6 +26,10 @@
       "description": "Get this value by repl.it/@izzy-adeeva/UserButt (telethon)",
       "value": ""
     },
+    "SESSION_NAME": {
+      "description": "Get this value by repl.it/@izzy-adeeva/UserButt (pyrogram)",
+      "value": ""
+    },
     "TG_BOT_TOKEN": {
       "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather and get the token of your bot.Worth it. Get it.",
       "value": ""
@@ -33,11 +37,6 @@
     "COMMAND_HAND_LER": {
       "description": "Set this one with only one the symbol to use it before your command to run like . , ' `",
       "value": ".",
-      "required": false
-    },
-    "ENV": {
-      "description": "Setting this to ANYTHING will enable heroku.",
-      "value": "ANYTHING",
       "required": false
     },
     "HEROKU_API_KEY": {
@@ -48,11 +47,6 @@
     "HEROKU_APP_NAME": {
       "description": "YOUR app name ",
       "value": "",
-      "required": false
-    },
-    "TZ": {
-      "description": "Required for Correct Time on autopic/get time. Know your timezone from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
-      "value": "Asia/Jakarta",
       "required": false
     },
     "UPSTREAM_REPO": {
