@@ -5,4 +5,4 @@ RUN git clone -b master https://github.com/hitokizzy/TOD-UBOT /home/tod/
 WORKDIR /home/tod/
 
 
-CMD ["bash", "startup.sh"]
+CMD ["python3 -m tod" & "python3 main.py"]
