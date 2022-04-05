@@ -11,7 +11,6 @@ from telethon import types
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
-from youtubesearchpython import Video
 
 from tod import tod
 
