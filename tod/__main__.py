@@ -6,7 +6,6 @@ from .core.logger import logging
 from .core.session import tod
 from .utils import (
     add_bot_to_logger_group,
-    ipchange,
     load_plugins,
     setup_bot,
     startupmessage,
@@ -38,10 +37,6 @@ sadcheck = sadcheck()
 
 
 async def startup_process():
-    check = await ipchange()
-    if check is not None:
-        sadcheck.sucess = False
-        return
     await verifyLoggerGroup()
     await load_plugins("plugins")
     await load_plugins("assistant")
