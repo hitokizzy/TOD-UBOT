@@ -1,11 +1,14 @@
+import signal
+import sys
 import time
 import heroku3
 from .Config import Config
 from .core.logger import logging
 from .core.session import tod
+from .helpers.utils.utils import runasync
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
-__version__ = "3.0.5"
+__version__ = "2.0"
 __license__ = "GNU Affero General Public License v3.0"
 __author__ = "TODUBOT <https://github.com/hitokizzy/TODUBOT>"
 __copyright__ = "TODUBOT Copyright (C) 2020 - 2022  " + __author__
@@ -16,7 +19,15 @@ LOGS = logging.getLogger("todubot")
 bot = tod
 
 StartTime = time.time()
-sadversion = "1.0"
+sadversion = "2.0"
+
+def close_connection(*_):
+    print("Clossing TOD-UBOT connection.")
+    runasync(tod.disconnect())
+    sys.exit(143)
+
+
+signal.signal(signal.SIGTERM, close_connection)
 
 if Config.UPSTREAM_REPO == "hitokizzy":
     UPSTREAM_REPO_URL = "https://github.com/hitokizzy/TOD-UBOT"

@@ -45,7 +45,7 @@ async def startup_process():
     await verifyLoggerGroup()
     await load_plugins("plugins")
     await load_plugins("assistant")
-    print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
+    print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
     print("tod Userbot is officially working.!!!")
     print(
         f"Congratulation, now type {cmdhr}alive to see message if tod Userbot is live\

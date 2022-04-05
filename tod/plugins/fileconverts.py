@@ -1,4 +1,4 @@
-# by @mrconfused (@hitokizzy)
+
 import asyncio
 import io
 import logging

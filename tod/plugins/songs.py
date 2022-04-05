@@ -17,7 +17,7 @@ from tod import tod
 
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.functions import name_dl, song_dl, video_dl, yt_search
+from ..helpers.functions import name_dl, song_dl, video_dl, yt_search, yt_data
 from ..helpers.tools import media_type
 from ..helpers.utils import _sadutils, reply_id
 
@@ -97,7 +97,7 @@ async def _(event):
         sadthumb = Path(f"{sadname}.webp")
     elif not os.path.exists(sadthumb):
         sadthumb = None
-    ytdata = Video.get(video_link)
+    ytdata = await yt_data(video_link)
     await event.client.send_file(
         event.chat_id,
         song_file,
@@ -180,7 +180,7 @@ async def _(event):
         sadthumb = Path(f"{sadname}.webp")
     elif not os.path.exists(sadthumb):
         sadthumb = None
-    ytdata = Video.get(video_link)
+    ytdata = await yt_data(video_link)
     await event.client.send_file(
         event.chat_id,
         vsong_file,

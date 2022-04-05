@@ -106,10 +106,11 @@ async def bot_start(event):
             start_msg = f"Hey! 👤{mention},\
                         \nI am {my_mention}'s assistant bot.\
                         \nYou can contact to my master from here.\
-                        \n\nPowered by [TODUBOT](https://t.me/TODUBOT)"
+                        \n\nPowered by [RAM](https://t.me/ramsupportt), [Geez](https://t.me/GeezSupport)"
+                    
         buttons = [
             (
-                Button.url("Repo", "https://github.com/hitokizzy/TODUBOT"),
+                Button.url("Repo", "https://github.com/hitokizzy/TOD-UBOT"),
                 Button.url(
                     "Deploy",
                     "https://xnxx.com",
@@ -180,7 +181,7 @@ async def bot_pms(event):  # sourcery no-metrics
                         user_id, event.text, reply_to=reply_msg, link_preview=False
                     )
             except UserIsBlockedError:
-                return await event.reply("𝗧𝗵𝗶𝘀 𝗯𝗼𝘁 𝘄𝗮𝘀 𝗯𝗹𝗼𝗰𝗸𝗲𝗱 𝗯𝘆 𝘁𝗵𝗲 𝘂𝘀𝗲𝗿. ❌")
+                return await event.reply("𝗧𝗵𝗶𝘀 𝗯𝗼𝘁 𝘄𝗮𝘀 𝗯𝗹𝗼𝗰𝗸𝗲𝗱 𝗯𝘆 𝘁𝗵𝗲 𝘂𝘀𝗲𝗿.")
             except Exception as e:
                 return await event.reply(f"**Error:**\n`{e}`")
             try:
@@ -323,7 +324,7 @@ async def send_flood_alert(user_) -> None:
     # sourcery no-metrics
     buttons = [
         (
-            Button.inline("🚫  BAN", data=f"bot_pm_ban_{user_.id}"),
+            Button.inline("🚫 BAN", data=f"bot_pm_ban_{user_.id}"),
             Button.inline(
                 "➖ Bot Antiflood [OFF]",
                 data="toggle_bot-antiflood_off",

@@ -118,7 +118,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         return await event.edit("`Please set up`  **HEROKU_API_KEY**  ` Var...`")
     heroku = heroku3.from_key(HEROKU_API_KEY)
     heroku_app = None
-    heroku_applisadions = heroku.apps()
+    heroku_applications = heroku.apps()
     if HEROKU_APP_NAME is None:
         await event.edit(
             "`Please set up the` **HEROKU_APP_NAME** `Var`"
@@ -126,10 +126,10 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         )
         repo.__del__()
         return
-    for app in heroku_applisadions:
-        if app.name == HEROKU_APP_NAME:
-            heroku_app = app
-            break
+    heroku_app = next(
+        (app for app in heroku_applications if app.name == HEROKU_APP_NAME),
+        None,
+    )
     if heroku_app is None:
         await event.edit(
             f"{txt}\n" "`Invalid Heroku credentials for deploying userbot dyno.`"
@@ -152,7 +152,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
     ups_rem.fetch(ac_br)
     repo.git.reset("--hard", "FETCH_HEAD")
     heroku_git_url = heroku_app.git_url.replace(
-        "https://", "https://api:" + HEROKU_API_KEY + "@"
+        "https://", f"https://api:{HEROKU_API_KEY}@"
     )
     if "heroku" in repo.remotes:
         remote = repo.remote("heroku")
