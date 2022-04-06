@@ -1,5 +1,5 @@
 {
-  "name": "TODUBOT",
+  "name": "TOD-UBOT",
   "description": "Shut up, couse this is just a couple of code",
   "logo": "https://telegra.ph/file/902492291f182109319ee.png",
   "keywords": [
@@ -31,7 +31,7 @@
       "value": ""
     },
     "TG_BOT_TOKEN": {
-      "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather and get the token of your bot.Worth it. Get it.",
+      "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather.",
       "value": ""
     },
     "COMMAND_HAND_LER": {

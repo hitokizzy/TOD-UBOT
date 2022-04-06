@@ -28,6 +28,7 @@ jikanpy
 justwatch
 lottie
 lyricsgenius
+magickwand
 markdown
 motor
 moviepy
@@ -48,6 +49,7 @@ PyMuPDF
 pySmartDL
 python-barcode
 python-dotenv
+pytgcalls
 pytz
 qrcode
 randomstuff.py
