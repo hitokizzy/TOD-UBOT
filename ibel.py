@@ -2,7 +2,6 @@ import os
 from pytgcalls import GroupCall
 import ffmpeg
 from tod.Config import Config
-from datetime import datetime
 from pyrogram import filters, Client, idle
 import requests
 import wget
@@ -151,7 +150,7 @@ async def play_track(client, message):
     ).overwrite_output().run()
     os.remove(audio_original)
     if VOICE_CHATS and message.chat.id in VOICE_CHATS:
-        text = f'▶️ Playing **{audio.title}** here by VC BOT...'
+        f'▶️ Playing **{audio.title}** here by VC BOT...'
     else:
         try:
             group_call = GroupCall(client, input_filename)
