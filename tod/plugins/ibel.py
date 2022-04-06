@@ -132,7 +132,17 @@ async def deezer(_, message):
     os.remove(song)
     await hike.delete()
 
-@app.on_message(filters.command('play') & self_or_contact_filter)
+@tod.tod_cmd(
+    pattern="play$",
+    command=("play$", plugin_category),
+    info={
+        "header": "Play music from media",
+        "options": "Play musid from media",
+        "usage": [
+            "{tr}play <song title>",
+        ],
+    },
+)
 async def play_track(client, message):
     if not message.reply_to_message or not message.reply_to_message.audio:
         return
@@ -151,7 +161,7 @@ async def play_track(client, message):
     ).overwrite_output().run()
     os.remove(audio_original)
     if VOICE_CHATS and message.chat.id in VOICE_CHATS:
-        text = f'▶️ Playing **{audio.title}** here by VC BOT...'
+        text = f'▶️ Playing **{audio.title}** here by TOD-BOT...'
     else:
         try:
             group_call = GroupCall(client, input_filename)
@@ -160,7 +170,7 @@ async def play_track(client, message):
             await message.reply('Group Call doesnt exist')
             return
         VOICE_CHATS[message.chat.id] = group_call
-    await a.edit(f'▶️ Playing **{audio.title}** here by VC BOT...')
+    await a.edit(f'▶️ Playing **{audio.title}** here by TOD-BOT...')
 
 
 @tod.tod_cmd(
