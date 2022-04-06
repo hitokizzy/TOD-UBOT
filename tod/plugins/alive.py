@@ -11,7 +11,6 @@ from telethon.errors.rpcerrorlist import (
     WebpageMediaEmptyError,
 )
 from telethon.events import CallbackQuery
-from pyrogram import __version__ as __pyro_version_
 from tod import StartTime, tod, sadversion
 
 from ..Config import Config
