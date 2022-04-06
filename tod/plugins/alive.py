@@ -113,7 +113,7 @@ async def amireallyalive(event):
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**TODUBOT is Up and Running**"
     sad_caption = f"{ALIVE_TEXT}\n"
     sad_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
-    sad_caption += f"**{EMOJI} Pyrogram version :** `{pyrogram.__version__}}\n`"
+    sad_caption += f"**{EMOJI} Pyrogram version :** `{pyrogram.__version__}\n`"
     sad_caption += f"**{EMOJI} TOD-UBOT Version :** `{sadversion}`\n"
     sad_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
     sad_caption += f"**{EMOJI} Master:** {mention}\n"
