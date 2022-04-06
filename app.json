@@ -31,7 +31,7 @@
       "value": ""
     },
     "TG_BOT_TOKEN": {
-      "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather and get the token of your bot.Worth it. Get it.",
+      "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather.",
       "value": ""
     },
     "COMMAND_HAND_LER": {
