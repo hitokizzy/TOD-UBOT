@@ -48,7 +48,7 @@ PyMuPDF
 pySmartDL
 python-barcode
 python-dotenv
-py-tgcalls
+pytgcalls
 pytz
 qrcode
 randomstuff.py
