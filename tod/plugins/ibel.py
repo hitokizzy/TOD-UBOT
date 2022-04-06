@@ -160,7 +160,7 @@ async def play_track(client, message):
     ).overwrite_output().run()
     os.remove(audio_original)
     if VOICE_CHATS and message.chat.id in VOICE_CHATS:
-        text = f'▶️ Playing **{audio.title}** here by TOD-BOT...'
+        f'▶️ Playing **{audio.title}** here by TOD-BOT...'
     else:
         try:
             group_call = GroupCall(client, input_filename)
