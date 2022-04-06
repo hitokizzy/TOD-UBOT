@@ -2,7 +2,6 @@ import os
 from pytgcalls import GroupCall
 import ffmpeg
 from tod.Config import Config
-from datetime import datetime
 from pyrogram import filters, Client, idle
 import requests
 import wget
