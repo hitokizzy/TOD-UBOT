@@ -1,1 +1,1 @@
-python3 main.py & py -m tod
+python3 main.py & python3 -m tod
