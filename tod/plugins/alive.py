@@ -11,7 +11,7 @@ from telethon.errors.rpcerrorlist import (
     WebpageMediaEmptyError,
 )
 from telethon.events import CallbackQuery
-
+from pyrogram import __version__ as __pyro_version_
 from tod import StartTime, tod, sadversion
 
 from ..Config import Config
@@ -88,6 +88,7 @@ temp = """{ALIVE_TEXT}
 **{EMOJI} Telethon Version :** `{telever}`
 **{EMOJI} TOD-UBOT Version :** `{sadver}`
 **{EMOJI} Python Version :** `{pyver}`
+**{EMOJI} Pyrogram Version :** `{__pyro_version_}`
 **{EMOJI} Uptime :** `{uptime}`
 **{EMOJI} Master:** {mention}"""
 
@@ -110,7 +111,8 @@ async def amireallyalive(event):
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**TODUBOT is Up and Running**"
     sad_caption = f"{ALIVE_TEXT}\n"
     sad_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
-    sad_caption += f"**{EMOJI} TODUBOT Version :** `{sadversion}`\n"
+    sad_caption += f"**{EMOJI} Pyrogram version :** `{version.__pyro_version_}\n`"
+    sad_caption += f"**{EMOJI} TOD-UBOT Version :** `{sadversion}`\n"
     sad_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
     sad_caption += f"**{EMOJI} Master:** {mention}\n"
     results = await event.client.inline_query(Config.TG_BOT_USERNAME, sad_caption)

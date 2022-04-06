@@ -38,10 +38,10 @@ async def _(event):
         ms = round((tms - 0.6) / 3, 3)
         await sadevent.edit(f"Average Pong!\n`{ms} ms`")
     else:
-        sadevent = await edit_or_reply(event, "Pong! 🏓")
+        sadevent = await edit_or_reply(event, "Pong! ")
         end = datetime.now()
         ms = (end - start).microseconds / 1000
-        await sadevent.edit(f"Pong!\n`{ms} ms`")
+        await sadevent.edit(f"Pong!🏓\n`{ms} ms`")
 
 
 @tod.tod_cmd(
