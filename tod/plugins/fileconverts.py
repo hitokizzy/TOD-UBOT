@@ -524,7 +524,7 @@ async def _(event):  # sourcery no-metrics
     sad_event = "adeevaproject"
     if not sadreply or not sadreply.media or not sadreply.media.document:
         return await edit_or_reply(event, "`Stupid!, This is not animated sticker.`")
-    if sadreply.media.document.mime_type != "applisadion/x-tgsticker":
+    if sadreply.media.document.mime_type != "application/x-tgsticker":
         return await edit_or_reply(event, "`Stupid!, This is not animated sticker.`")
     sadevent = await edit_or_reply(
         event,
@@ -690,7 +690,7 @@ async def pic_gifcmd(event):  # sourcery no-metrics
     mediatype = media_type(reply)
     if not reply or not mediatype or mediatype not in ["Photo", "Sticker"]:
         return await edit_delete(event, "__Reply to photo or sticker to make it gif.__")
-    if mediatype == "Sticker" and reply.document.mime_type == "applisadion/i-tgsticker":
+    if mediatype == "Sticker" and reply.document.mime_type == "application/i-tgsticker":
         return await edit_delete(
             event,
             "__Reply to photo or sticker to make it gif. Animated sticker is not supported__",

@@ -444,7 +444,7 @@ async def gdrive_download(
     else:
         file_name = file.get("name")
         mimeType = file.get("mimeType")
-        if mimeType == "applisadion/vnd.google-apps.folder":
+        if mimeType == "application/vnd.google-apps.folder":
             file_name = file.get("name").replace(" ", "_")
             newpath = await create_server_dir(service, path, file_name)
             filespath_d = await list_drive_dir(service, file_Id)
@@ -520,7 +520,7 @@ async def download_gdrive(gdrive, service, uri, dir_id=GDRIVE_.parent_Id):
             .get(fileId=file_Id, fields="name, mimeType", supportsTeamDrives=True)
             .execute()
         )
-        if file["mimeType"] == "applisadion/vnd.google-apps.folder":
+        if file["mimeType"] == "application/vnd.google-apps.folder":
             folder = await create_dir(service, file["name"], dir_id)
             filespath_d = await list_drive_dir(service, file_Id)
             for nfileid in filespath_d:
@@ -577,7 +577,7 @@ async def get_information(service, Id):
 async def create_dir(service, folder_name, dir_id=None):
     metadata = {
         "name": folder_name,
-        "mimeType": "applisadion/vnd.google-apps.folder",
+        "mimeType": "application/vnd.google-apps.folder",
     }
     if not dir_id:
         try:
@@ -734,7 +734,7 @@ async def get_output(service, file_id):
     file_name = file_.get("name")
     file_size = humanbytes(int(file_.get("size", 0)))
     mime_type = file_.get("mimeType")
-    if mime_type == "applisadion/vnd.google-apps.folder":
+    if mime_type == "application/vnd.google-apps.folder":
         out = G_DRIVE_FOLDER_LINK.format(file_name, file_id)
     else:
         out = G_DRIVE_FILE_LINK.format(file_name, file_id, file_size)
@@ -743,7 +743,7 @@ async def get_output(service, file_id):
             Config.G_DRIVE_INDEX_LINK.rstrip("/"),
             quote(get_file_path(service, file_id, file_name)),
         )
-        if mime_type == "applisadion/vnd.google-apps.folder":
+        if mime_type == "application/vnd.google-apps.folder":
             link += "/"
         out += f"\n👥 __[Shareable Link]({link})__"
     return out
@@ -888,7 +888,7 @@ async def lists(gdrive, folderlink=None):  # sourcery no-metrics
                 break
 
             file_name = files.get("name")
-            if files.get("mimeType") == "applisadion/vnd.google-apps.folder":
+            if files.get("mimeType") == "application/vnd.google-apps.folder":
                 link = files.get("webViewLink")
                 message += f"📁️ • [{file_name}]({link})\n"
             else:
@@ -1078,7 +1078,7 @@ async def google_drive_managers(gdrive):  # sourcery no-metrics
             name_or_id, _ = (name_or_id, "unknown")
         metadata = {
             "name": name_or_id,
-            "mimeType": "applisadion/vnd.google-apps.folder",
+            "mimeType": "application/vnd.google-apps.folder",
         }
         try:
             len(GDRIVE_.parent_Id)
@@ -1142,7 +1142,7 @@ async def google_drive_managers(gdrive):  # sourcery no-metrics
                     continue
             name = f.get("name")
             mimeType = f.get("mimeType")
-            if mimeType == "applisadion/vnd.google-apps.folder":
+            if mimeType == "application/vnd.google-apps.folder":
                 status = "FOLDER - DELETION"
             else:
                 status = "FILE - DELETION"
@@ -1177,7 +1177,7 @@ async def google_drive_managers(gdrive):  # sourcery no-metrics
             webViewLink = f.get("webViewLink")
             downloadURL = f.get("webContentLink")
             description = f.get("description")
-            if mimeType == "applisadion/vnd.google-apps.folder":
+            if mimeType == "application/vnd.google-apps.folder":
                 status = "**FOLDER - EXIST **"
             else:
                 status = "**FILE - EXIST **"
@@ -1186,7 +1186,7 @@ async def google_drive_managers(gdrive):  # sourcery no-metrics
                 f"**Name  : **`{name_or_id}`\n"
                 f"**ID    :** `{f_id}`\n"
             )
-            if mimeType != "applisadion/vnd.google-apps.folder":
+            if mimeType != "application/vnd.google-apps.folder":
                 msg += f"**Size  :** `{humanbytes(f_size)}`\n"
                 msg += f"**Link  :** [{name_or_id}]({downloadURL})\n\n"
             else:

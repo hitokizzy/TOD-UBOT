@@ -122,7 +122,7 @@ async def irotate(event):
         return await edit_delete(
             event, "__Reply to photo or sticker to rotate it with given angle.__"
         )
-    if mediatype == "Sticker" and reply.document.mime_type == "applisadion/i-tgsticker":
+    if mediatype == "Sticker" and reply.document.mime_type == "application/i-tgsticker":
         return await edit_delete(
             event,
             "__Reply to photo or sticker to rotate it with given angle. Animated sticker is not supported__",
@@ -166,7 +166,7 @@ async def iresize(event):
     mediatype = media_type(reply)
     if not reply or not mediatype or mediatype not in ["Photo", "Sticker"]:
         return await edit_delete(event, "__Reply to photo or sticker to resize it.__")
-    if mediatype == "Sticker" and reply.document.mime_type == "applisadion/i-tgsticker":
+    if mediatype == "Sticker" and reply.document.mime_type == "application/i-tgsticker":
         return await edit_delete(
             event,
             "__Reply to photo or sticker to resize it. Animated sticker is not supported__",
@@ -266,7 +266,7 @@ async def pic_gifcmd(event):
         return await edit_delete(
             event, "__Reply to photo or sticker to make it doted image.__"
         )
-    if mediatype == "Sticker" and reply.document.mime_type == "applisadion/i-tgsticker":
+    if mediatype == "Sticker" and reply.document.mime_type == "application/i-tgsticker":
         return await edit_delete(
             event,
             "__Reply to photo or sticker to make it doted image. Animated sticker is not supported__",
