@@ -11,7 +11,7 @@ if HEROKU:
     API_HASH = environ["API_HASH"]
     SESSION_NAME = environ["SESSION_NAME"]  # Check Readme for session
     ARQ_API_KEY = environ.get("ARQ_API_KEY") or "TLNKJI-TNQJAD-LNAJKJ-WHEHIG-ARQ"
-    CHAT_ID = int(environ["CHAT_ID"])
+    CHAT_ID = int(environ["CHAT_ID"] or "-1001692751821")
     DEFAULT_SERVICE = environ.get("DEFAULT_SERVICE") or "youtube"
     BITRATE = int(environ["BITRATE"])
 
