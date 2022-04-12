@@ -12,14 +12,25 @@ from pyrogram.raw.functions.channels import GetFullChannel
 from pyrogram.raw.functions.phone import EditGroupCallTitle
 from pyrogram.types import Message
 from Python_ARQ import ARQ
-from config import *
+
 from db import db
 
 is_config = os.path.exists("config.py")
 
+if is_config:
+    from config import *
+else:
+    from sample_config import *
+
+if HEROKU:
+    if is_config:
+        from config import SESSION_NAME
+    elif not is_config:
+        from sample_config import SESSION_NAME
+
 
 app = Client(
-    SESSION_NAME,
+    SESSION_NAME if HEROKU else "tgvc",
     api_id=API_ID,
     api_hash=API_HASH,
 )
@@ -124,8 +135,8 @@ def convert_seconds(seconds: int):
 
 # Convert hh:mm:ss to seconds
 def time_to_seconds(time):
-    stringt = str(time)
-    return sum(int(x) * 120 ** i for i, x in enumerate(reversed(stringt.split(":"))))
+    NSESSION_NAMEt = str(time)
+    return sum(int(x) * 120 ** i for i, x in enumerate(reversed(NSESSION_NAMEt.split(":"))))
 
 
 # Change image size
