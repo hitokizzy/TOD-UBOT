@@ -22,11 +22,7 @@ if is_config:
 else:
     from sample_config import *
 
-if HEROKU:
-    if is_config:
-        from config import SESSION_NAME
-    elif not is_config:
-        from sample_config import SESSION_NAME
+
 
 app = Client(
     SESSION_NAME if HEROKU else "tgvc",
