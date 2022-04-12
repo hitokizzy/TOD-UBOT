@@ -24,12 +24,12 @@ else:
 
 if HEROKU:
     if is_config:
-        from config import SESSION_STRING
+        from config import SESSION_NAME
     elif not is_config:
-        from sample_config import SESSION_STRING
+        from sample_config import SESSION_NAME
 
 app = Client(
-    SESSION_STRING if HEROKU else "tgvc",
+    SESSION_NAME if HEROKU else "tgvc",
     api_id=API_ID,
     api_hash=API_HASH,
 )
