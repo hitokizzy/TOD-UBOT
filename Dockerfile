@@ -1,4 +1,4 @@
-FROM hitkizzy/begoluh:slim-buster
+FROM hitokizzy/begoluh:slim-buster
 # ======================
 #    RAM-UBOT DOCKER
 #   FROM DOCKERHUB.COM
