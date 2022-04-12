@@ -1,3 +1,8 @@
-FROM hitokizzy/ibel:slim-buster
-#ITS FREE#
-#iraa
+FROM hitkizzy/begoluh:buster
+# ======================
+#    RAM-UBOT DOCKER
+#   FROM DOCKERHUB.COM
+# ======================
+RUN git clone -b dev1 https://github.com/hitokizzy/TOD-UBOT /home/tod/
+WORKDIR /home/tod
+CMD ["bash", "todubot"]
