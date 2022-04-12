@@ -12,16 +12,10 @@ from pyrogram.raw.functions.channels import GetFullChannel
 from pyrogram.raw.functions.phone import EditGroupCallTitle
 from pyrogram.types import Message
 from Python_ARQ import ARQ
-
+from config import *
 from db import db
 
 is_config = os.path.exists("config.py")
-
-if is_config:
-    from config import *
-else:
-    from sample_config import *
-
 
 
 app = Client(
