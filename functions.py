@@ -25,7 +25,7 @@ else:
 
 
 app = Client(
-    SESSION_NAME if HEROKU else "tgvc",
+    SESSION_NAME,
     api_id=API_ID,
     api_hash=API_HASH,
 )
