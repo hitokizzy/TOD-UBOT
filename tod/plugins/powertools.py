@@ -5,7 +5,7 @@ from time import sleep
 from tod import tod
 
 from ..core.logger import logging
-from ..core.managers import edit_or_reply
+from ..core.managers import edit_or_reply, edit_delete
 from ..sql_helper.global_collection import (
     add_to_collectionlist,
     del_keyword_collectionlist,

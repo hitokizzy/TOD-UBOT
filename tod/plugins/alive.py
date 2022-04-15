@@ -86,12 +86,12 @@ async def amireallyalive(event):
 
 temp = """{ALIVE_TEXT}
 **{EMOJI} Database :** `{dbhealth}`
-**{EMOJI} Telethon Version :** `{telever}`
 **{EMOJI} TOD-UBOT Version :** `{sadver}`
-**{EMOJI} Python Version :** `{pyver}`
+**{EMOJI} Telethon Version :** `{telever}`
 **{EMOJI} Pyrogram Version :** `{pyrover}`
+**{EMOJI} Python Version :** `{pyver}`
 **{EMOJI} Uptime :** `{uptime}`
-**{EMOJI} Master:** {mention}"""
+**{EMOJI} Master:**[{user.first_name}](tg://user?id={user.id})"""
 
 
 @tod.tod_cmd(
@@ -112,7 +112,7 @@ async def amireallyalive(event):
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**TODUBOT is Up and Running**"
     sad_caption = f"{ALIVE_TEXT}\n"
     sad_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
-    sad_caption += f"**{EMOJI} Pyrogram version :** `{pyrogram.__version_}\n`"
+    sad_caption += f"**{EMOJI} Pyrogram version :** `{pyrogram.__version__}\n`"
     sad_caption += f"**{EMOJI} TOD-UBOT Version :** `{sadversion}`\n"
     sad_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
     sad_caption += f"**{EMOJI} Master:** {mention}\n"

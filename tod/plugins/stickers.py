@@ -622,7 +622,7 @@ async def pack_kang(event):  # sourcery no-metrics
     },
 )
 async def pussycat(args):
-    "To kang a sticker."  # scam :('  Dom't kamg :/@Jisan7509
+    "To kang a sticker."  
     message = await args.get_reply_message()
     user = await args.client.get_me()
     userid = user.id
