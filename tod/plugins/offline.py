@@ -82,10 +82,10 @@ async def _(event):
     },
 )
 async def _(event):
-    zzy_it = "me"
-    zzy = await event.client.get_entity(zzy_it)
-    if zzy.first_name.startswith(OFFLINE_TAG):
-        await eor(event, "**Changing Profile to Online...**")
+    user_it = "me"
+    user = await event.client.get_entity(user_it)
+    if user.first_name.startswith(OFFLINE_TAG):
+        zzy = await eor(event, "**Changing Profile to Online...**")
     else:
         await eod(event, "**Already Online.**")
         return
