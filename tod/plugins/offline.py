@@ -1,12 +1,12 @@
 import os
 import urllib
 
-from telethon.errors.rpcerrorlist import zzynameOccupiedError
+from telethon.errors.rpcerrorlist import UsernameOccupiedError
 from telethon.tl import functions
-from telethon.tl.functions.account import UpdatezzynameRequest
+from telethon.tl.functions.account import UpdateUsernameRequest
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
-from telethon.tl.functions.photos import DeletePhotosRequest, GetzzyPhotosRequest
-from telethon.tl.types import Channel, Chat, InputPhoto, zzy
+from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
+from telethon.tl.types import Channel, Chat, InputPhoto, User
 from tod import tod
 from ..core.managers import edit_or_reply, edit_delete
 from ..Config import Config
