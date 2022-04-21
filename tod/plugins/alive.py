@@ -91,7 +91,7 @@ temp = """{ALIVE_TEXT}
 **{EMOJI} Pyrogram Version :** `{pyrover}`
 **{EMOJI} Python Version :** `{pyver}`
 **{EMOJI} Uptime :** `{uptime}`
-**{EMOJI} Master:**[{user.first_name}](tg://user?id={user.id})"""
+**{EMOJI} Master:**{mention}"""
 
 
 @tod.tod_cmd(
