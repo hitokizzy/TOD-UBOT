@@ -74,6 +74,7 @@ class Config(object):
     DIGITAL_PIC = os.environ.get("DIGITAL_PIC", None)
     # your default pic telegraph link
     DEFAULT_PIC = os.environ.get("DEFAULT_PIC", None)
+    ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
     # set this with your default bio
     DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
     # set this with your deafult name

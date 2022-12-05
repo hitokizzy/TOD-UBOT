@@ -49,7 +49,7 @@ async def amireallyalive(event):
         gvarstatus("ALIVE_TEXT") or "**TOD UBOT IS ALIVE**"
     )
     TOD_IMG = (
-        gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/902492291f182109319ee.png"
+        Config.ALIVE_PIC("ALIVE_PIC") or "https://telegra.ph/file/902492291f182109319ee.png"
     )
     sad_caption = gvarstatus("ALIVE_TEMPLATE") or temp
     caption = sad_caption.format(
