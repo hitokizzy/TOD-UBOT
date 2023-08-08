@@ -30,10 +30,6 @@
       "description": "Get this value by repl.it/@izzy-adeeva/UserButt (telethon)",
       "value": ""
     },
-    "SESSION_NAME": {
-      "description": "Get this value by repl.it/@izzy-adeeva/UserButt (pyrogram)",
-      "value": ""
-    },
     "TG_BOT_TOKEN": {
       "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather.",
       "value": ""
